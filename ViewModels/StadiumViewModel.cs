@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using FootballStarz.Models;
+
+namespace FootballStarz.ViewModels
+{
+    public class StadiumViewModel
+    {
+        public int Id { get; set; }
+        public string StadiumName { get; set; }
+
+        public DateTime BuildDate { get; set; }
+
+        public virtual Club ClubName { get; set; }
+    }
+}
