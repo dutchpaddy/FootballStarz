@@ -14,9 +14,13 @@ namespace FootballStarz.Services
         Stadium GetSingleStadiumById(int id);
         void UpdateStadium(Stadium newTeacher);
         void DeleteStadium(int id);
-        List<Stadium> GetStadiumsByClubsId(int teacherId);
+
+        List<Stadium> GetStadiumsByClubId(int clubId);
+
+        Club GetSingleClubByClubId(int clubid);
+
         StadiumViewModel StadiumDeletionConfirmation(int id);
         StadiumViewModel StadiumDetails(int id);
-        
+
     }
 }

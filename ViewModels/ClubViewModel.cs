@@ -8,7 +8,7 @@ namespace FootballStarz.ViewModels
 {
     public class ClubViewModel
     {
-        public int Id { get; set; }
+        public int ClubId { get; set; }
         public string ClubName { get; set; }
         public List<Player> Players { get; set; }
     }

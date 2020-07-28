@@ -1,0 +1,4 @@
+C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csprojAssemblyReference.cache
+C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfoInputs.cache
+C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfo.cs
+C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csproj.CoreCompileInputs.cache

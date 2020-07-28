@@ -12,12 +12,8 @@ namespace FootballStarz.Models
         public int ClubId { get; set; }
 
         public string ClubName { get; set; }
-        
+
         public DateTime Founded { get; set; }
-
-
-        //Relations
-        public List<Teacher> Teachers { get; set; }
 
     }
 }

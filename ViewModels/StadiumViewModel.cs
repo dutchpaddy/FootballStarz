@@ -8,11 +8,11 @@ namespace FootballStarz.ViewModels
 {
     public class StadiumViewModel
     {
-        public int Id { get; set; }
+        public int StadiumId { get; set; }
         public string StadiumName { get; set; }
 
         public DateTime BuildDate { get; set; }
 
-        public virtual Club ClubName { get; set; }
+        public String ClubName { get; set; }
     }
 }

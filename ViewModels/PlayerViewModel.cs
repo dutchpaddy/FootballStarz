@@ -7,8 +7,9 @@ namespace FootballStarz.ViewModels
 {
     public class PlayerViewModel
     {
-        public int Id { get; set; }
-        public string FullName { get; set; }
-        public object PlayerName { get; internal set; }
+        public int PlayerId { get; set; }
+        public string PlayerName { get; set; }
+        public DateTime BirthDate{ get; set; }
+        public String Nationality { get; set; }
     }
 }

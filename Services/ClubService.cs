@@ -30,10 +30,10 @@ namespace FootballStarz.Services
 
         public List<Club> GetAllClubs()
         {
-           return _context.Clubs.ToList();
+            return _context.Clubs.ToList();
         }
 
-        public Club GetSingleClubById(int id) => _context.Clubs.Where(n => n.Id == id).FirstOrDefault();
+        public Club GetSingleClubById(int id) => _context.Clubs.Where(n => n.ClubId == id).FirstOrDefault();
 
         public List<Stadium> GetStadiumByClubId(int clubId) => _context.Stadiums.Where(n => n.ClubId == clubId).ToList();
 
@@ -41,10 +41,9 @@ namespace FootballStarz.Services
 
         public void UpdateClub(Club newClub)
         {
-            Club oldClub = GetSingleClubById(newClub.Id);
-            oldClub.Location = newClub.Location;
-            oldClub.FoundingYear = newClub.FoundingYear;
-            oldClub.Name = newClub.Name;
+            Club oldClub = GetSingleClubById(newClub.ClubId);
+            oldClub.ClubName = newClub.ClubName;
+            oldClub.Founded = newClub.Founded;
             _context.SaveChanges();
         }
 
@@ -54,8 +53,8 @@ namespace FootballStarz.Services
             Club club = GetSingleClubById(id);
             ClubViewModel clubVM = new ClubViewModel()
             {
-                Id = club.Id,
-                ClubName = club.Name
+                ClubId = club.ClubId,
+                ClubName = club.ClubName
             };
 
             return clubVM;
@@ -67,7 +66,8 @@ namespace FootballStarz.Services
             Club club = GetSingleClubById(id);
             ClubViewModel clubVM = new ClubViewModel()
             {
-                ClubName = club.Name,
+                ClubId = club.ClubId,
+                ClubName = club.ClubName,
                 Players = GetPlayersByClubId(id)
             };
             return clubVM;

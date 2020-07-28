@@ -31,24 +31,23 @@ namespace FootballStarz.Services
 
         public List<Stadium> GetAllStadiums()
         {
-            List<Stadium> stadiums = _context.Stadiums.Include(n => n.School).ToList();
+            List<Stadium> stadiums = _context.Stadiums.Include(n => n.StadiumId).ToList();
             return stadiums;
         }
 
-        public Stadium GetSingleStadiumById(int id) => _context.Stadiums.Where(n => n.Id == id).FirstOrDefault();
+        public Stadium GetSingleStadiumById(int id) => _context.Stadiums.Where(n => n.StadiumId == id).FirstOrDefault();
 
-        public List<Player> GetStudentsByStadiumId(int stadiumId) => _context.Students.Where(n => n.StadiumId == stadiumId).ToList();
-        
+        public Club GetSingleClubByClubId(int id) => _context.Clubs.Where(n => n.ClubId == id).FirstOrDefault();
+
+        public List<Stadium> GetStadiumsByClubId(int clubId) => _context.Stadiums.Where(n => n.ClubId == clubId).ToList();
+
 
         public void UpdateStadium(Stadium newStadium)
         {
-            Stadium oldStadium = GetSingleStadiumById(newStadium.Id);
-            oldStadium.FullName = newStadium.FullName;
-            oldStadium.Age = newStadium.Age;
-            oldStadium.PhoneNumber = newStadium.PhoneNumber;
-            oldStadium.YearsOfExperience = newStadium.YearsOfExperience;
-            oldStadium.Subject = newStadium.Subject;
-            oldStadium.SchoolId = newStadium.SchoolId;
+            Stadium oldStadium = GetSingleStadiumById(newStadium.StadiumId);
+            oldStadium.StadiumName = newStadium.StadiumName;
+            oldStadium.BuildDate = newStadium.BuildDate;
+            oldStadium.StadiumId = newStadium.StadiumId;
             _context.SaveChanges();
         }
 
@@ -58,8 +57,8 @@ namespace FootballStarz.Services
             Stadium stadium = GetSingleStadiumById(id);
             StadiumViewModel stadiumVM = new StadiumViewModel()
             {
-                Id = stadium.Id,
-                StadiumName = stadium.FullName
+                StadiumId = stadium.StadiumId,
+                StadiumName = stadium.StadiumName
             };
 
             return stadiumVM;
@@ -69,10 +68,13 @@ namespace FootballStarz.Services
         public StadiumViewModel StadiumDetails(int id)
         {
             Stadium stadium = GetSingleStadiumById(id);
+
             StadiumViewModel stadiumVM = new StadiumViewModel()
             {
-                StadiumName = stadium.FullName,
-                Students = GetStudentsByStadiumId(id)
+                StadiumId = stadium.StadiumId,
+                StadiumName = stadium.StadiumName,
+                BuildDate = stadium.BuildDate,
+                ClubName = GetSingleClubByClubId(stadium.ClubId).ClubName
             };
             return stadiumVM;
 

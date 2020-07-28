@@ -17,12 +17,9 @@ namespace FootballStarz.Models
         [Display(Name = "Birth Date")]
         public DateTime BirthDate { get; set; }
 
-        [Display(Name = "Nationality"]
+        [Display(Name = "Nationality")]
         public string Nationality;
-                
-        //Relations
-        public virtual Club Club{ get; set; }
-        [Display(Name = "Club Name")]
+
         public int ClubId { get; set; }
 
     }

@@ -35,16 +35,16 @@ namespace FootballStarz.Services
             return players;
         }
 
-        public Player GetSinglePlayerById(int id) => _context.Players.Where(n => n.Id == id).FirstOrDefault();
+        public Player GetSinglePlayerById(int playerId) => _context.Players.Where(n => n.PlayerId == playerId).FirstOrDefault();
 
-        
+
 
         public void UpdatePlayer(Player newPlayer)
         {
-            Player oldPlayer = GetSinglePlayerById(newPlayer.Id);
-            oldPlayer.FullName = newPlayer.FullName;
-            oldPlayer.MiddleName = newPlayer.MiddleName;
-            oldPlayer.Age = newPlayer.Age;
+            Player oldPlayer = GetSinglePlayerById(newPlayer.PlayerId);
+            oldPlayer.PlayerName = newPlayer.PlayerName;
+            oldPlayer.BirthDate = newPlayer.BirthDate;
+            oldPlayer.Nationality = newPlayer.Nationality;
             oldPlayer.ClubId = newPlayer.ClubId;
             _context.SaveChanges();
         }
@@ -55,8 +55,8 @@ namespace FootballStarz.Services
             Player player = GetSinglePlayerById(id);
             PlayerViewModel playerVM = new PlayerViewModel()
             {
-                Id = player.Id,
-                PlayerName = player.FullName
+                PlayerId = player.PlayerId,
+                PlayerName = player.PlayerName
             };
 
             return playerVM;

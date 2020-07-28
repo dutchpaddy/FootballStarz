@@ -14,9 +14,10 @@ namespace FootballStarz.Services
         Club GetSingleClubById(int id);
         void UpdateClub(Club newClub);
         void DeleteClub(int id);
-        List<Stadium> GetPlayersByClubId(int ClubId);
+
+        List<Player> GetPlayersByClubId(int ClubId);
         ClubViewModel ClubDeletionConfirmation(int id);
         ClubViewModel ClubDetails(int id);
-        
+
     }
 }
