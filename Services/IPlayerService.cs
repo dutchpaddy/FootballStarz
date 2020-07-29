@@ -15,5 +15,6 @@ namespace FootballStarz.Services
         void UpdatePlayer(Player newPlayer);
         void DeletePlayer(int id);
         PlayerViewModel PlayerDeletionConfirmation(int id);
+
     }
 }

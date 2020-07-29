@@ -1,39 +1,33 @@
-﻿@model SchoolViewModel
+﻿@model ClubViewModel
 @{
-    ViewData["Title"] = "SchoolDetails";
+    ViewData["Title"] = "ClubDetails";
 }
 <div class="text-center">
-    <h2>These are the teachers that work at school: <b>@Model.SchoolName</b></h2>
+    <h2>These are the players that have a contract with club: <b>@Model.ClubName</b></h2>
 </div>
 <hr />
 
-@if (Model.Teachers.Count() == 0)
+@if (Model.Players.Count() == 0)
 {
     <h2 class="alert-info">
-        There are no teachers for this school.
+        There are no players with this club.
     </h2>
 }
 else
 {
     <table class="table table-striped">
         <thead>
-        <th>Full Name</th>
-        <th>Name of School</th>
-        <th>Age</th>
-        <th>Years Of Experience</th>
-        <th>Phone Number</th>
-        <th>Subject</th>
+        <th>Player Name</th>
+        <th>Date of Birth</th>
+        <th>Nationality</th>
         </thead>
         <tbody>
-            @foreach (Teacher dfk in Model.Teachers)
+            @foreach (Player dfk in Model.Players)
                 {
                 <tr>
-                    <td>@dfk.FullName</td>
-                    <td>@dfk.School.Name</td>
-                    <td>@dfk.Age</td>
-                    <td>@dfk.YearsOfExperience</td>
-                    <td>@dfk.PhoneNumber</td>
-                    <td>@dfk.Subject</td>
+                    <td>@dfk.PlayerName</td>
+                    <td>@dfk.BirthDate</td>
+                    <td>@dfk.Nationality</td>
                 </tr>
             }
         </tbody>

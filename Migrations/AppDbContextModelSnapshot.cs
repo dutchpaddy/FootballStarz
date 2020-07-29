@@ -71,78 +71,51 @@ namespace FootballStarz.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("FootballStarz.Models.School", b =>
+            modelBuilder.Entity("FootballStarz.Models.Club", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ClubId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Address")
-                        .IsRequired();
+                    b.Property<string>("ClubName");
 
-                    b.Property<DateTime>("FoundingYear");
+                    b.Property<DateTime>("Founded");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20);
+                    b.HasKey("ClubId");
 
-                    b.Property<int>("NumberOfStudents");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Schools");
+                    b.ToTable("Clubs");
                 });
 
-            modelBuilder.Entity("FootballStarz.Models.Student", b =>
+            modelBuilder.Entity("FootballStarz.Models.Player", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PlayerId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Age");
+                    b.Property<DateTime>("BirthDate");
 
-                    b.Property<DateTime>("Birthday");
+                    b.Property<int>("ClubId");
 
-                    b.Property<string>("EmailAddress");
+                    b.Property<string>("PlayerName");
 
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(25);
+                    b.HasKey("PlayerId");
 
-                    b.Property<double>("GPA");
-
-                    b.Property<string>("MiddleName");
-
-                    b.Property<int>("TeacherId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TeacherId");
-
-                    b.ToTable("Students");
+                    b.ToTable("Players");
                 });
 
-            modelBuilder.Entity("FootballStarz.Models.Teacher", b =>
+            modelBuilder.Entity("FootballStarz.Models.Stadium", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("StadiumId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Age");
+                    b.Property<DateTime>("BuildDate");
 
-                    b.Property<string>("FullName")
+                    b.Property<int>("ClubId");
+
+                    b.Property<string>("StadiumName")
                         .IsRequired();
 
-                    b.Property<string>("PhoneNumber");
+                    b.HasKey("StadiumId");
 
-                    b.Property<int>("SchoolId");
-
-                    b.Property<string>("Subject");
-
-                    b.Property<double>("YearsOfExperience");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SchoolId");
-
-                    b.ToTable("Teachers");
+                    b.ToTable("Stadiums");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -251,22 +224,6 @@ namespace FootballStarz.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("FootballStarz.Models.Student", b =>
-                {
-                    b.HasOne("FootballStarz.Models.Teacher", "Teacher")
-                        .WithMany("Students")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FootballStarz.Models.Teacher", b =>
-                {
-                    b.HasOne("FootballStarz.Models.School", "School")
-                        .WithMany("Teachers")
-                        .HasForeignKey("SchoolId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

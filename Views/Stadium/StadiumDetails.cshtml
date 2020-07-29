@@ -1,0 +1,29 @@
+﻿@model StadiumViewModel
+@{
+    ViewData["Title"] = "StadiumDetails";
+}
+<div class="text-center">
+    <h2>These are the clubs for this stadium: <b>@Model.StadiumName</b></h2>
+</div>
+<hr />
+
+@if (Model.ClubName.Count() == 0)
+{
+    <h2 class="alert-info">
+        There are no clubs for this stadium.
+    </h2>
+}
+else
+{
+<table class="table">
+    <thead>
+    <th>StadiumName</th>
+    <th>Date Buid</th>
+    <th>Location</th>
+    <th>Home of club</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+            }

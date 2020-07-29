@@ -1,0 +1,10 @@
+﻿@model StadiumViewModel
+
+
+<div class="text-center">
+    <h2 class="text-danger">You are about to delete the Stadium: @Model.StadiumName</h2>
+    <h3>Are you sure?</h3>
+</div>
+@Html.ActionLink("Cancel", "AllStadiums", "Stadium", null, new { @class = "btn btn-default" })
+@Html.ActionLink("Yes, sure!", "StadiumDeleted", "Stadium", new { @id = Model.StadiumId }, new { @class="btn btn-danger" })
+

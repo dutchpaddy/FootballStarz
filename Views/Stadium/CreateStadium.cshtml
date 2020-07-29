@@ -1,0 +1,32 @@
+﻿@model Stadium
+@{
+    ViewData["Title"] = "CreateStadium";
+}
+
+<h2>Create New Stadium</h2>
+
+@Html.ActionLink("Show All Stadiums", "AllStadiums", "Stadium")
+
+@using (Html.BeginForm("StadiumCreated", "Stadium", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.StadiumName)
+        @Html.TextBoxFor(n => n.StadiumName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.StadiumName, "", new { @class = "text-danger"} )
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.BuildDate)
+        @Html.TextBoxFor(e => e.BuildDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.BuildDate, "", new { @class = "text-danger"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.ClubId)
+        @Html.TextBoxFor(a => a.ClubId, new { @class = "form-control" })
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Create Stadium</button>
+}
+

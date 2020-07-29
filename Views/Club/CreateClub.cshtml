@@ -1,36 +1,25 @@
-﻿@model School
+﻿@model Club
 @{
-    ViewData["Title"] = "CreateSchool";
+    ViewData["Title"] = "CreateClub";
 }
-<h2>Create New School</h2>
+<h2>Create New Club</h2>
 
-@Html.ActionLink("Show All Schools", "All", "School")
+@Html.ActionLink("Show All Clubs", "All", "Club")
 
-@using (Html.BeginForm("SchoolCreated","School", FormMethod.Post))
+@using (Html.BeginForm("ClubCreated","Club", FormMethod.Post))
 {
     <div class="form-group">
-        @Html.LabelFor(n => n.Name)
-        @Html.TextBoxFor(n => n.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(n=>n.Name, "", new{ @class="text-danger"})
+        @Html.LabelFor(n => n.ClubName)
+        @Html.TextBoxFor(n => n.ClubName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n=>n.ClubName, "", new{ @class="text-danger"})
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(n => n.Address)
-        @Html.TextBoxFor(e => e.Address, new { @class = "form-control" })
-        @Html.ValidationMessageFor(n=>n.Address, "", new{ @class="text-danger" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(n => n.FoundingYear)
-        @Html.TextBoxFor(a => a.FoundingYear, new { @class = "form-control", @type="date" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(n => n.NumberOfStudents)
-        @Html.TextBoxFor(a => a.NumberOfStudents, new { @class = "form-control"})
+        @Html.LabelFor(n => n.Founded)
+        @Html.TextBoxFor(a => a.Founded, new { @class = "form-control", @type="date" })
     </div>
 
 
-    <button type="submit" class="btn btn-success">Create School</button>
+    <button type="submit" class="btn btn-success">Create Club</button>
 }
 

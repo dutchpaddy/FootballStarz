@@ -1,0 +1,19 @@
+﻿@model PlayerViewModel
+
+@{
+    ViewData["Title"] = "DeletePlayer";
+}
+
+<h2>DeletePlayer</h2>
+
+<div class="text-center">
+    <h2 class="text-danger">You are about to delete the Player: @Model.PlayerName</h2>
+    <h3>Are you sure?</h3>
+</div>
+
+@Html.ActionLink("Cancel", "AllPlayers", "Player", null, new { @class = "btn btn-default"})
+@Html.ActionLink("Yes, sure!", "PlayerDeleted", "Player", new { @id = Model.PlayerId }, new { @class="btn btn-danger"})
+
+
+
+

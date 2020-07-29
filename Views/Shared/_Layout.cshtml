@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - School Management</title>
+    <title>@ViewData["Title"] - FootballStarz</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,14 +26,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="School" asp-action="All" class="navbar-brand">School Management
+                <a asp-area="" asp-controller="Club" asp-action="All" class="navbar-brand">FootballStarz
                 </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="School" asp-action="All">Schools</a></li>
-                    <li><a asp-area="" asp-controller="Teacher" asp-action="AllTeachers">Teachers</a></li>
-                    <li><a asp-area="" asp-controller="Student" asp-action="AllStudents">Students</a></li>
+                    <li><a asp-area="" asp-controller="Club" asp-action="AllClubs">Clubs</a></li>
+                    <li><a asp-area="" asp-controller="Stadium" asp-action="AllStadiums">Stadiums</a></li>
+                    <li><a asp-area="" asp-controller="Player" asp-action="AllPlayers">Players</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

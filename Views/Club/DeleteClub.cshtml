@@ -1,14 +1,14 @@
-﻿@model SchoolViewModel
+﻿@model ClubViewModel
 @{
-    ViewData["Title"] = "DeleteSchool";
+    ViewData["Title"] = "DeleteClub";
 }
 
 <div class="text-center">
-    <h2 class="text-danger">You are about to delete the School: @Model.SchoolName</h2>
+    <h2 class="text-danger">You are about to delete the club: @Model.ClubName</h2>
     <h3>Are you sure?</h3>
 </div>
 
 @Html.ActionLink("Cancel","All","School")
-@Html.ActionLink("Yes, sure!","SchoolDeleted","School",new {@id = Model.Id })
+@Html.ActionLink("Yes, sure!","ClubDeleted","Club",new {@id = Model.ClubId })
 
 

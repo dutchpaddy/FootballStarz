@@ -10,9 +10,9 @@ namespace FootballStarz.Services
     public interface IStadiumService
     {
         List<Stadium> GetAllStadiums();
-        void AddStadium(Stadium teacher);
+        void AddStadium(Stadium stadium);
         Stadium GetSingleStadiumById(int id);
-        void UpdateStadium(Stadium newTeacher);
+        void UpdateStadium(Stadium newStadium);
         void DeleteStadium(int id);
 
         List<Stadium> GetStadiumsByClubId(int clubId);

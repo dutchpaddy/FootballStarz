@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model List<Player>
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "AllPlayers";
+}
+
+<h2>@ViewData["PlayerMessage"]</h2>
+
+@Html.ActionLink("Create Player", "CreatePlayer", "Player")
+
+
+
+
+
+@if (Model.Count() == 0)
+{
+    <div class="text-center alert-info">
+        <h1>
+            There are no players available.
+        </h1>
+    </div>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <th>Player Name</th>
+        <th>Birth Date</th>
+        <th>Nationality</th>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <th>Edit</th>
+            <th>Delete</th>
+        }
+        </thead>
+        <tbody>
+            @foreach (Player player in Model)
+            {
+                <tr>
+                    <td>@player.PlayerName</td>
+                    <td>@player.BirthDate.ToString("yyyy-MM-dd")</td>
+                    <td>@player.Nationality</td>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <td>@Html.ActionLink("Edit Player", "EditPlayer", "Player", new { @id = player.PlayerId })</td>
+                        <td>@Html.ActionLink("Delete Player", "DeletePlayer", "Player", new { @id = player.PlayerId })</td>
+                    }
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}

@@ -34,7 +34,7 @@ namespace FootballStarz.Controllers
             var result = await _signInManager.PasswordSignInAsync(loginVM.Email, loginVM.Password,loginVM.RememberMe,false);
             if (result.Succeeded)
             {
-                return RedirectToAction("All", "School");
+                return RedirectToAction("All", "Clubs");
             }
             else
                 return View("Login");
@@ -57,7 +57,7 @@ namespace FootballStarz.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("All", "School");
+                return RedirectToAction("All", "Clubs");
             }
 
             return View("Register");
@@ -67,7 +67,7 @@ namespace FootballStarz.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("All", "School");
+            return RedirectToAction("All", "Clubs");
         }
     }
 }

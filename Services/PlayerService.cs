@@ -38,6 +38,7 @@ namespace FootballStarz.Services
         public Player GetSinglePlayerById(int playerId) => _context.Players.Where(n => n.PlayerId == playerId).FirstOrDefault();
 
 
+ 
 
         public void UpdatePlayer(Player newPlayer)
         {

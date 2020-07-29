@@ -64,11 +64,12 @@ namespace FootballStarz.Services
         public ClubViewModel ClubDetails(int id)
         {
             Club club = GetSingleClubById(id);
+
             ClubViewModel clubVM = new ClubViewModel()
             {
                 ClubId = club.ClubId,
                 ClubName = club.ClubName,
-                Players = GetPlayersByClubId(id)
+                Players = GetPlayersByClubId(club.ClubId)
             };
             return clubVM;
 

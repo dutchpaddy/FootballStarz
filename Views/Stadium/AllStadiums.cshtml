@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model List<Stadium>
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Stadium";
+}
+
+<h2>@ViewData["myFirstViewData"]</h2>
+
+@Html.ActionLink("Create Stadium", "CreateStadium", "Stadium")
+@if (Model.Count() == 0)
+{
+    <div class="alert-info text-center">
+        <h1>There are no Stadiums available.</h1>
+    </div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <th>Stadium Name</th>
+        <th>Date Built</th>
+        <th>Home to Club</th>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Details</th>
+        }
+
+        </thead>
+        <tbody>
+            @foreach (Stadium dfk in Model)
+            {
+                <tr>
+                    <td>@dfk.StadiumName</td>
+                    <td>@dfk.BuildDate</td>
+                    <td>@dfk.ClubId</td>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                    <td>@Html.ActionLink("Edit Stadium", "EditStadium", "Stadium", new { @id = dfk.StadiumId })</td>
+                    <td>@Html.ActionLink("Delete Stadium", "DeleteStadium", "Stadium", new { @id = dfk.StadiumId })</td>
+                    <td>@Html.ActionLink("Details", "StadiumDetails", "Stadium", new { @id = dfk.StadiumId })</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
