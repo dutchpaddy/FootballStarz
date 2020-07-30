@@ -82,7 +82,7 @@ namespace FootballStarz
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Club}/{action=All}/{id?}");
+                    template: "{controller=Club}/{action=AllClubs}/{id?}");
             });
         }
     }

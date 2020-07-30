@@ -31,8 +31,7 @@ namespace FootballStarz.Services
 
         public List<Stadium> GetAllStadiums()
         {
-            List<Stadium> stadiums = _context.Stadiums.Include(n => n.StadiumId).ToList();
-            return stadiums;
+            return _context.Stadiums.ToList();
         }
 
         public Stadium GetSingleStadiumById(int id) => _context.Stadiums.Where(n => n.StadiumId == id).FirstOrDefault();

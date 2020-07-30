@@ -16,6 +16,12 @@ namespace FootballStarz.Services
         {
             _context = context;
         }
+
+        public List<Player> GetAllPlayers()
+        {
+            return _context.Players.ToList();
+        }
+
         public void AddPlayer(Player player)
         {
             _context.Players.Add(player);
@@ -29,16 +35,8 @@ namespace FootballStarz.Services
             _context.SaveChanges();
         }
 
-        public List<Player> GetAllPlayers()
-        {
-            List<Player> players = _context.Players.Include(n => n.ClubId).ToList();
-            return players;
-        }
-
         public Player GetSinglePlayerById(int playerId) => _context.Players.Where(n => n.PlayerId == playerId).FirstOrDefault();
 
-
- 
 
         public void UpdatePlayer(Player newPlayer)
         {

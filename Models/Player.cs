@@ -18,7 +18,7 @@ namespace FootballStarz.Models
         public DateTime BirthDate { get; set; }
 
         [Display(Name = "Nationality")]
-        public string Nationality;
+        public string Nationality { get; set; }
 
         public int ClubId { get; set; }
 

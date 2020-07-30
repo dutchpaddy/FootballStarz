@@ -94,6 +94,8 @@ namespace FootballStarz.Migrations
 
                     b.Property<int>("ClubId");
 
+                    b.Property<string>("Nationality");
+
                     b.Property<string>("PlayerName");
 
                     b.HasKey("PlayerId");

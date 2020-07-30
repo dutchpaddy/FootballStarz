@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SRC\\C#\\ASP.NET\\Projects\\A003\\FootballStarz\\FootballStarz.csproj": {}
+    "C:\\Projects\\FootballStarz\\W003\\FootballStarz\\FootballStarz.csproj": {}
   },
   "projects": {
-    "C:\\SRC\\C#\\ASP.NET\\Projects\\A003\\FootballStarz\\FootballStarz.csproj": {
+    "C:\\Projects\\FootballStarz\\W003\\FootballStarz\\FootballStarz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SRC\\C#\\ASP.NET\\Projects\\A003\\FootballStarz\\FootballStarz.csproj",
+        "projectUniqueName": "C:\\Projects\\FootballStarz\\W003\\FootballStarz\\FootballStarz.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\SRC\\C#\\ASP.NET\\Projects\\A003\\FootballStarz\\FootballStarz.csproj",
-        "packagesPath": "C:\\Users\\vanbe\\.nuget\\packages\\",
-        "outputPath": "C:\\SRC\\C#\\ASP.NET\\Projects\\A003\\FootballStarz\\obj\\",
+        "projectPath": "C:\\Projects\\FootballStarz\\W003\\FootballStarz\\FootballStarz.csproj",
+        "packagesPath": "C:\\Users\\nly38158\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\FootballStarz\\W003\\FootballStarz\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\vanbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nly38158\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,7 +68,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
