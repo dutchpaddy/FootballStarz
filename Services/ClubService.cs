@@ -33,6 +33,8 @@ namespace FootballStarz.Services
         public void UpdateClub(Club newClub)
         {
             Club oldClub = GetSingleClubById(newClub.ClubId);
+
+            oldClub.ClubId = newClub.ClubId;
             oldClub.ClubName = newClub.ClubName;
             oldClub.Founded = newClub.Founded;
             oldClub.StadiumId = newClub.StadiumId;
@@ -54,14 +56,17 @@ namespace FootballStarz.Services
    
         public ClubViewModel ClubDeletionConfirmation(int id)
         {
-
             Club club = GetSingleClubById(id);
+            Stadium stadium = GetStadiumByStadiumId(club.StadiumId);
+            List<Player> players = GetPlayersByClubId(club.ClubId);
+
             ClubViewModel clubVM = new ClubViewModel()
             {
+                ClubId = club.ClubId,
                 ClubName = club.ClubName,
                 Founded = club.Founded,
-                Stadium = GetStadiumByStadiumId(club.StadiumId),
-                Players = GetPlayersByClubId( club.ClubId )
+                Stadium = stadium,
+                Players = players
             };
 
             return clubVM;
@@ -71,14 +76,18 @@ namespace FootballStarz.Services
         public ClubViewModel ClubDetails(int id)
         {
             Club club = GetSingleClubById(id);
+            Stadium stadium = GetStadiumByStadiumId(club.StadiumId);
+            List<Player> players = GetPlayersByClubId(club.ClubId);
 
             ClubViewModel clubVM = new ClubViewModel()
             {
+                ClubId = club.ClubId,
                 ClubName = club.ClubName,
                 Founded = club.Founded,
-                Stadium = GetStadiumByStadiumId(club.StadiumId),
-                Players = GetPlayersByClubId(club.ClubId)
+                Stadium = stadium,
+                Players = players
             };
+
             return clubVM;
 
         }

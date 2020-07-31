@@ -44,7 +44,11 @@ namespace FootballStarz.Controllers
         }
 
 
-        public IActionResult EditClub(int id) => View(_ClubService.GetSingleClubById(id));
+        public IActionResult EditClub(int id)
+        {
+            return View(_ClubService.GetSingleClubById(id));
+        }
+
 
 
         public IActionResult ClubEdited(Club newClub)

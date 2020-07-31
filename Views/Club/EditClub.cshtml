@@ -1,4 +1,4 @@
-﻿@model School
+﻿@model Club
 @{
     ViewData["Title"] = "EditClub";
 }
@@ -6,18 +6,19 @@
 
 @using (Html.BeginForm("ClubEdited", "Club", FormMethod.Post))
 {
-    @Html.HiddenFor(n=>n.Id)
+    @Html.HiddenFor(n => n.ClubId)
 
     <div class="form-group">
         @Html.LabelFor(n => n.ClubName)
         @Html.TextBoxFor(n => n.ClubName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(n=>n.ClubName,"", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(n => n.ClubName, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         @Html.LabelFor(n => n.Founded)
-        @Html.TextBoxFor(a => a.Founded,"{0:yyyy-MM-dd}", new { @class = "form-control", @type="date", @value = Model.Founded.ToString("yyyy-MM-dd") })
+        @Html.TextBoxFor(a => a.Founded, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.Founded.ToString("yyyy-MM-dd") })
     </div>
+
 
     <button type="submit" class="btn btn-default">Save Changes</button>
 

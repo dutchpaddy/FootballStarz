@@ -2,6 +2,20 @@
 @{
     ViewData["Title"] = "ClubDetails";
 }
+<table class="table table-striped">
+    <thead>
+    <th>Club Name</th>
+    <th>Founded</th>
+    <th>Home Stadium</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.ClubName</td>
+            <td>@Model.Founded</td>
+            <td>@Model.Stadium.StadiumName</td>
+        </tr>
+    </tbody>
+</table>
 <div class="text-center">
     <h2>These are the players that have a contract with club: <b>@Model.ClubName</b></h2>
 </div>
@@ -23,7 +37,7 @@ else
         </thead>
         <tbody>
             @foreach (Player dfk in Model.Players)
-                {
+            {
                 <tr>
                     <td>@dfk.PlayerName</td>
                     <td>@dfk.BirthDate</td>
