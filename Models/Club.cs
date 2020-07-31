@@ -18,5 +18,7 @@ namespace FootballStarz.Models
 
         public DateTime Founded { get; set; }
 
+        public int StadiumId { get; set; }
+
     }
 }

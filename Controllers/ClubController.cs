@@ -30,6 +30,7 @@ namespace FootballStarz.Controllers
             return View(_ClubService.GetAllClubs());
         }
         public IActionResult CreateClub() => View();
+
         public IActionResult ClubCreated(Club Club)
         {
 

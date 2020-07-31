@@ -15,9 +15,28 @@ namespace FootballStarz.Services
         {
             _context = context;
         }
+
+
+        public List<Club> GetAllClubs()
+        {
+            return _context.Clubs.ToList();
+        }
+
         public void AddClub(Club club)
         {
             _context.Clubs.Add(club);
+            _context.SaveChanges();
+        }
+
+        public Club GetSingleClubById(int id) => _context.Clubs.Where(n => n.ClubId == id).FirstOrDefault();
+
+        public void UpdateClub(Club newClub)
+        {
+            Club oldClub = GetSingleClubById(newClub.ClubId);
+            oldClub.ClubName = newClub.ClubName;
+            oldClub.Founded = newClub.Founded;
+            oldClub.StadiumId = newClub.StadiumId;
+
             _context.SaveChanges();
         }
 
@@ -28,33 +47,21 @@ namespace FootballStarz.Services
             _context.SaveChanges();
         }
 
-        public List<Club> GetAllClubs()
-        {
-            return _context.Clubs.ToList();
-        }
-
-        public Club GetSingleClubById(int id) => _context.Clubs.Where(n => n.ClubId == id).FirstOrDefault();
-
-        public List<Stadium> GetStadiumByClubId(int clubId) => _context.Stadiums.Where(n => n.ClubId == clubId).ToList();
-
         public List<Player> GetPlayersByClubId(int clubId) => _context.Players.Where(n => n.ClubId == clubId).ToList();
 
-        public void UpdateClub(Club newClub)
-        {
-            Club oldClub = GetSingleClubById(newClub.ClubId);
-            oldClub.ClubName = newClub.ClubName;
-            oldClub.Founded = newClub.Founded;
-            _context.SaveChanges();
-        }
+        public Stadium GetStadiumByStadiumId(int StadiumId) => _context.Stadiums.Where(n => n.StadiumId == StadiumId).FirstOrDefault();
 
+   
         public ClubViewModel ClubDeletionConfirmation(int id)
         {
 
             Club club = GetSingleClubById(id);
             ClubViewModel clubVM = new ClubViewModel()
             {
-                ClubId = club.ClubId,
-                ClubName = club.ClubName
+                ClubName = club.ClubName,
+                Founded = club.Founded,
+                Stadium = GetStadiumByStadiumId(club.StadiumId),
+                Players = GetPlayersByClubId( club.ClubId )
             };
 
             return clubVM;
@@ -67,8 +74,9 @@ namespace FootballStarz.Services
 
             ClubViewModel clubVM = new ClubViewModel()
             {
-                ClubId = club.ClubId,
                 ClubName = club.ClubName,
+                Founded = club.Founded,
+                Stadium = GetStadiumByStadiumId(club.StadiumId),
                 Players = GetPlayersByClubId(club.ClubId)
             };
             return clubVM;

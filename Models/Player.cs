@@ -20,6 +20,7 @@ namespace FootballStarz.Models
         [Display(Name = "Nationality")]
         public string Nationality { get; set; }
 
+        // Relations
         public int ClubId { get; set; }
 
     }

@@ -80,6 +80,8 @@ namespace FootballStarz.Migrations
 
                     b.Property<DateTime>("Founded");
 
+                    b.Property<int>("StadiumId");
+
                     b.HasKey("ClubId");
 
                     b.ToTable("Clubs");
