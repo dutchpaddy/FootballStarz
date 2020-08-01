@@ -67,13 +67,14 @@ namespace FootballStarz.Services
         public StadiumViewModel StadiumDetails(int id)
         {
             Stadium stadium = GetSingleStadiumById(id);
+            Club club = GetSingleClubByClubId(stadium.ClubId);
 
             StadiumViewModel stadiumVM = new StadiumViewModel()
             {
                 StadiumId = stadium.StadiumId,
                 StadiumName = stadium.StadiumName,
                 BuildDate = stadium.BuildDate,
-                ClubName = GetSingleClubByClubId(stadium.ClubId).ClubName
+                ClubName = club.ClubName
             };
             return stadiumVM;
 
