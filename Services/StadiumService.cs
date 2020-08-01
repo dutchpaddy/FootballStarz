@@ -73,6 +73,7 @@ namespace FootballStarz.Services
             {
                 StadiumId = stadium.StadiumId,
                 StadiumName = stadium.StadiumName,
+                Location = stadium.Location,
                 BuildDate = stadium.BuildDate,
                 ClubName = club.ClubName
             };
