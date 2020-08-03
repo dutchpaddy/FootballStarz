@@ -16,34 +16,34 @@
 }
 else
 {
-    <table class="table table-striped">
-        <thead>
-        <th>Stadium Name</th>
-        <th>Date Built</th>
-        <th>Home to Club</th>
-        @if (SignInManager.IsSignedIn(User))
-        {
-            <th>Edit</th>
-            <th>Delete</th>
-            <th>Details</th>
-        }
+<table class="table table-striped">
+    <thead>
+    <th>Stadium Name</th>
+    <th>Location</th>
+    <th>Date Built</th>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Details</th>
+    }
 
-        </thead>
-        <tbody>
-            @foreach (Stadium dfk in Model)
+    </thead>
+    <tbody>
+        @foreach (Stadium std in Model)
+        {
+        <tr>
+            <td>@std.StadiumName</td>
+            <td>@std.Location</td>
+            <td>@std.BuildDate</td>
+            @if (SignInManager.IsSignedIn(User))
             {
-                <tr>
-                    <td>@dfk.StadiumName</td>
-                    <td>@dfk.BuildDate</td>
-                    <td>@dfk.ClubId</td>
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                    <td>@Html.ActionLink("Edit Stadium", "EditStadium", "Stadium", new { @id = dfk.StadiumId })</td>
-                    <td>@Html.ActionLink("Delete Stadium", "DeleteStadium", "Stadium", new { @id = dfk.StadiumId })</td>
-                    <td>@Html.ActionLink("Details", "StadiumDetails", "Stadium", new { @id = dfk.StadiumId })</td>
-                    }
-                </tr>
+                <td>@Html.ActionLink("Edit Stadium", "EditStadium", "Stadium", new { @id = std.StadiumId })</td>
+                <td>@Html.ActionLink("Delete Stadium", "DeleteStadium", "Stadium", new { @id = std.StadiumId })</td>
+                <td>@Html.ActionLink("Details", "StadiumDetails", "Stadium", new { @id = std.StadiumId })</td>
             }
-        </tbody>
-    </table>
+        </tr>
+        }
+    </tbody>
+</table>
 }

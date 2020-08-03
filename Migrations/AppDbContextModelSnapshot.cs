@@ -114,6 +114,8 @@ namespace FootballStarz.Migrations
 
                     b.Property<int>("ClubId");
 
+                    b.Property<string>("Location");
+
                     b.Property<string>("StadiumName")
                         .IsRequired();
 
