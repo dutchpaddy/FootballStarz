@@ -29,7 +29,11 @@ namespace FootballStarz.Controllers
         {
             return View(_ClubService.GetAllClubs());
         }
-        public IActionResult CreateClub() => View();
+        public IActionResult CreateClub()
+        {
+            ViewBag.Stadiums = _ClubService.GetAllStadiums();
+            return View();
+        }
 
         public IActionResult ClubCreated(Club Club)
         {
@@ -46,6 +50,7 @@ namespace FootballStarz.Controllers
 
         public IActionResult EditClub(int id)
         {
+            ViewBag.Stadiums = _ClubService.GetAllStadiums();
             return View(_ClubService.GetSingleClubById(id));
         }
 

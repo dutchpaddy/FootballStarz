@@ -18,6 +18,7 @@ namespace FootballStarz.Models
 
         public DateTime Founded { get; set; }
 
+        [Display(Name = "Stadium Name")]
         public int StadiumId { get; set; }
 
     }
