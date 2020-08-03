@@ -3,16 +3,24 @@
     ViewData["Title"] = "StadiumDetails";
 }
 <hr />
-    <table class="table table-striped">
-        <tbody>
-            <tr>
-                <td>Stadium Name</td<td>@Model.StadiumName</td>
-                <td>Location</td><td>@Model.Location</td>
-                <td>Date Built</td><td>@Model.BuildDate</td>
-                <td>Club playing this stadium</td><td>@Model.ClubName</td>
-            </tr>
-        </tbody>
-    </table>
 
-<hr />
-}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td><b>Stadium Name</b></td>
+        <td>@Model.StadiumName</td>
+    </tr>
+    </tr>
+        <td><b>Location</b></td>
+        <td>@Model.Location</td>
+    </tr>
+    <tr>
+        <td><b>Date Built</b></td>
+        <td>@Model.BuildDate.ToString("dd-MM-yyyy")</td>
+    </tr>
+    <tr>
+        <td><b>Club playing this stadium</b></td>
+        <td>@Model.ClubName</td>
+        </tr>
+    </thead>
+</table>

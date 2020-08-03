@@ -53,12 +53,7 @@ namespace FootballStarz.Services
 
         public Stadium GetStadiumByStadiumId(int StadiumId) => _context.Stadiums.Where(n => n.StadiumId == StadiumId).FirstOrDefault();
 
-        public List<Stadium> GetStadiumsByClubId(int clubId) => _context.Stadiums.Where(n => n.ClubId == clubId).ToList();
 
-        public List<Stadium> GetAllStadiums()
-        {
-            return _context.Stadiums.ToList();
-        }
         public ClubViewModel ClubDeletionConfirmation(int id)
         {
             Club club = GetSingleClubById(id);

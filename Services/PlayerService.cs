@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FootballStarz.Data;
 using FootballStarz.Models;
 using FootballStarz.ViewModels;
+using SQLitePCL;
 
 namespace FootballStarz.Services
 {

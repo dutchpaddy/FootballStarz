@@ -11,7 +11,7 @@
     <tbody>
         <tr>
             <td>@Model.ClubName</td>
-            <td>@Model.Founded</td>
+            <td>@Model.Founded.ToString("dd-MM-yyyy")</td>
             <td>@Model.Stadium.StadiumName</td>
         </tr>
     </tbody>
@@ -40,7 +40,7 @@ else
             {
                 <tr>
                     <td>@dfk.PlayerName</td>
-                    <td>@dfk.BirthDate</td>
+                    <td>@dfk.BirthDate.ToString("dd-MM-yyyy")</td>
                     <td>@dfk.Nationality</td>
                 </tr>
             }

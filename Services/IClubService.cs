@@ -17,11 +17,6 @@ namespace FootballStarz.Services
 
         List<Player> GetPlayersByClubId(int ClubId);
 
-        Stadium GetStadiumByStadiumId(int StadiumId);
-
-        List<Stadium> GetStadiumsByClubId(int clubId);
-        List<Stadium> GetAllStadiums();
-
         ClubViewModel ClubDeletionConfirmation(int id);
 
         ClubViewModel ClubDetails(int id);

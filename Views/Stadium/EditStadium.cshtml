@@ -22,7 +22,7 @@
 
     <div class="form-group">
         @Html.LabelFor(n => n.BuildDate)
-        @Html.TextBoxFor(b => b.BuildDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.BuildDate.ToString("yyyy-MM-dd") })
+        @Html.TextBoxFor(b => b.BuildDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.BuildDate.ToString("dd-MM-yyyy") })
         @Html.ValidationMessageFor(n => n.BuildDate, "", new { @class = "text-danger" })
     </div>
 
