@@ -24,32 +24,34 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-        <th>Player Name</th>
-        <th>Birth Date</th>
-        <th>Nationality</th>
-        @if (SignInManager.IsSignedIn(User))
+<table class="table">
+    <thead>
+    <th>Player Name</th>
+    <th>Birth Date</th>
+    <th>Nationality</th>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Details</th>
+    }
+    </thead>
+    <tbody>
+        @foreach (Player player in Model)
         {
-            <th>Edit</th>
-            <th>Delete</th>
+            <tr>
+                <td>@player.PlayerName</td>
+                <td>@player.BirthDate.ToString("yyyy-MM-dd")</td>
+                <td>@player.Nationality</td>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <td>@Html.ActionLink("Edit", "EditPlayer", "Player", new { @id = player.PlayerId })</td>
+                    <td>@Html.ActionLink("Delete", "DeletePlayer", "Player", new { @id = player.PlayerId })</td>
+                    <td>@Html.ActionLink("Details", "PlayerDetails", "Player", new { @id = player.PlayerId })</td>
+                }
+            </tr>
         }
-        </thead>
-        <tbody>
-            @foreach (Player player in Model)
-            {
-                <tr>
-                    <td>@player.PlayerName</td>
-                    <td>@player.BirthDate.ToString("yyyy-MM-dd")</td>
-                    <td>@player.Nationality</td>
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <td>@Html.ActionLink("Edit Player", "EditPlayer", "Player", new { @id = player.PlayerId })</td>
-                        <td>@Html.ActionLink("Delete Player", "DeletePlayer", "Player", new { @id = player.PlayerId })</td>
-                    }
-                </tr>
-            }
 
-        </tbody>
-    </table>
+    </tbody>
+</table>
 }

@@ -46,6 +46,7 @@ namespace FootballStarz.Services
             Stadium oldStadium = GetSingleStadiumById(newStadium.StadiumId);
             oldStadium.StadiumName = newStadium.StadiumName;
             oldStadium.BuildDate = newStadium.BuildDate;
+            oldStadium.StadiumImage = newStadium.StadiumImage;
             oldStadium.StadiumId = newStadium.StadiumId;
             _context.SaveChanges();
         }
@@ -75,6 +76,7 @@ namespace FootballStarz.Services
                 StadiumName = stadium.StadiumName,
                 Location = stadium.Location,
                 BuildDate = stadium.BuildDate,
+                StadiumImage= stadium.StadiumImage,
                 ClubName = club.ClubName
             };
             return stadiumVM;

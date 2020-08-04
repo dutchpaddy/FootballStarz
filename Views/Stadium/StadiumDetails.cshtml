@@ -2,17 +2,17 @@
 @{
     ViewData["Title"] = "StadiumDetails";
 }
-<hr />
 
+<h1>@Model.StadiumName</h1>
 <table class="table table-striped">
     <thead>
-    <tr>
-        <td><b>Stadium Name</b></td>
-        <td>@Model.StadiumName</td>
-    </tr>
-    </tr>
-        <td><b>Location</b></td>
-        <td>@Model.Location</td>
+        <tr>
+            <td><b>Stadium Name</b></td>
+            <td>@Model.StadiumName</td>
+        </tr>
+        </tr>
+    <td><b>Location</b></td>
+    <td>@Model.Location</td>
     </tr>
     <tr>
         <td><b>Date Built</b></td>
@@ -21,6 +21,14 @@
     <tr>
         <td><b>Club playing this stadium</b></td>
         <td>@Model.ClubName</td>
-        </tr>
+    </tr>
     </thead>
 </table>
+
+<div style="padding:10px;">
+    @if (Model.StadiumImage != "")
+    {
+        <img src="~/images/Stadium/@Model.StadiumImage" alt="Stadium" width="250" height="200" />
+    }
+</div>
+

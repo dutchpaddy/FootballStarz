@@ -13,6 +13,7 @@ namespace FootballStarz.ViewModels
 
         public string Location { get; set; }
         public DateTime BuildDate { get; set; }
+        public String StadiumImage { get; set; }
 
         public String ClubName { get; set; }
     }

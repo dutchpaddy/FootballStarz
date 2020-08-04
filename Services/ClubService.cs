@@ -37,6 +37,7 @@ namespace FootballStarz.Services
             oldClub.ClubId = newClub.ClubId;
             oldClub.ClubName = newClub.ClubName;
             oldClub.Founded = newClub.Founded;
+            oldClub.ClubLogo = newClub.ClubLogo;
             oldClub.StadiumId = newClub.StadiumId;
 
             _context.SaveChanges();
@@ -65,6 +66,7 @@ namespace FootballStarz.Services
                 ClubId = club.ClubId,
                 ClubName = club.ClubName,
                 Founded = club.Founded,
+                ClubLogo = club.ClubLogo,
                 Stadium = stadium,
                 Players = players
             };
@@ -84,6 +86,7 @@ namespace FootballStarz.Services
                 ClubId = club.ClubId,
                 ClubName = club.ClubName,
                 Founded = club.Founded,
+                ClubLogo = club.ClubLogo,
                 Stadium = stadium,
                 Players = players
             };

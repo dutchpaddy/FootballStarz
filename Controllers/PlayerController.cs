@@ -70,5 +70,18 @@ namespace FootballStarz.Controllers
             return View();
 
         }
+
+        public IActionResult PlayerDetails(int id)
+        {
+
+            return View(_PlayerService.PlayerDetails(id));
+        }
+
+        [Route("/search/{name}")]
+        public IActionResult Search(string name)
+        {
+            string searchName = name;
+            return View();
+        }
     }
 }
