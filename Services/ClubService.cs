@@ -37,7 +37,7 @@ namespace FootballStarz.Services
             oldClub.ClubId = newClub.ClubId;
             oldClub.ClubName = newClub.ClubName;
             oldClub.Founded = newClub.Founded;
-            oldClub.ClubLogo = newClub.ClubLogo;
+            oldClub.ClubLogo = newClub.ClubLogo;		// Read image from storage; see WorldJourney example
             oldClub.StadiumId = newClub.StadiumId;
 
             _context.SaveChanges();

@@ -6,7 +6,7 @@
 
 @Html.ActionLink("Show All Clubs", "All", "Club")
 
-@using (Html.BeginForm("ClubCreated", "Club", FormMethod.Post))
+@using (Html.BeginForm("ClubCreated", "Club", FormMethod.Post))                             @* For asp-for format see DataAnnotationsExample *@
 {
     <div class="form-group">
         @Html.LabelFor(n => n.ClubName)
