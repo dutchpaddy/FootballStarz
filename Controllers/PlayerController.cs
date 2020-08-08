@@ -18,11 +18,11 @@ namespace FootballStarz.Controllers
     {
 
         private IPlayerService _PlayerService;
-        private IStadiumService _StadiumService;
-        public PlayerController(IPlayerService PlayerService, IStadiumService StadiumService)
+        private IClubService _ClubService;
+        public PlayerController(IPlayerService PlayerService, IClubService ClubService)
         {
             _PlayerService = PlayerService;
-            _StadiumService = StadiumService;
+            _ClubService = ClubService;
         }
         [AllowAnonymous]
         public IActionResult AllPlayers()
@@ -32,14 +32,13 @@ namespace FootballStarz.Controllers
 
             public IActionResult CreatePlayer()
         {
-            ViewBag.Stadiums = _StadiumService.GetAllStadiums();
+            ViewBag.Clubs = _ClubService.GetAllClubs();
             return View();
         }
         public IActionResult PlayerCreated(Player Player)
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Stadiums = _StadiumService.GetAllStadiums();
                 ModelState.AddModelError(string.Empty, "Something went wrong");
                 return View("CreatePlayer");
             }
@@ -48,7 +47,7 @@ namespace FootballStarz.Controllers
         }
         public IActionResult EditPlayer(int id)
         {
-            ViewBag.Stadiums = _StadiumService.GetAllStadiums();
+            ViewBag.Clubs = _ClubService.GetAllClubs();
             return View(_PlayerService.GetSinglePlayerById(id));
         }
         public IActionResult PlayerEdited(Player newPlayer)
@@ -56,7 +55,6 @@ namespace FootballStarz.Controllers
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError(string.Empty, "Something went wrong");
-                ViewBag.Stadiums = _StadiumService.GetAllStadiums();
                 return View("EditPlayer", newPlayer);
             }
             _PlayerService.UpdatePlayer(newPlayer);
@@ -71,6 +69,19 @@ namespace FootballStarz.Controllers
             _PlayerService.DeletePlayer(id);
             return View();
 
+        }
+
+        public IActionResult PlayerDetails(int id)
+        {
+
+            return View(_PlayerService.PlayerDetails(id));
+        }
+
+        [Route("/search/{name}")]
+        public IActionResult Search(string name)
+        {
+            string searchName = name;
+            return View();
         }
     }
 }

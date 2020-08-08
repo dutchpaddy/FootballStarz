@@ -19,17 +19,23 @@ namespace FootballStarz.Controllers
 
         private IClubService _ClubService;
         private IPlayerService _PlayerService;
-        public ClubController(IClubService ClubService, IPlayerService PlayerService)
+        private IStadiumService _StadiumService;
+        public ClubController(IClubService ClubService, IPlayerService PlayerService, IStadiumService StadiumService)
         {
             _ClubService = ClubService;
             _PlayerService = PlayerService;
+            _StadiumService = StadiumService;
         }
         [AllowAnonymous]
         public IActionResult AllClubs()
         {
             return View(_ClubService.GetAllClubs());
         }
-        public IActionResult CreateClub() => View();
+        public IActionResult CreateClub()
+        {
+            ViewBag.Stadiums = _StadiumService.GetAllStadiums();
+            return View();
+        }
 
         public IActionResult ClubCreated(Club Club)
         {
@@ -46,6 +52,7 @@ namespace FootballStarz.Controllers
 
         public IActionResult EditClub(int id)
         {
+            ViewBag.Stadiums = _StadiumService.GetAllStadiums();
             return View(_ClubService.GetSingleClubById(id));
         }
 

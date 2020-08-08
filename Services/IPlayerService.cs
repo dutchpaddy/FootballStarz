@@ -12,8 +12,12 @@ namespace FootballStarz.Services
         List<Player> GetAllPlayers();
         void AddPlayer(Player player);
         Player GetSinglePlayerById(int id);
+        Club GetSingleClubById(int id);
+        PlayerViewModel PlayerDetails(int id);
+
         void UpdatePlayer(Player newPlayer);
         void DeletePlayer(int id);
+
         PlayerViewModel PlayerDeletionConfirmation(int id);
 
     }

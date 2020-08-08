@@ -23,7 +23,6 @@ C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplicat
 C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
 C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.dll
 C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.pdb
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csprojAssemblyReference.cache
 C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfoInputs.cache
 C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfo.cs
 C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csproj.CoreCompileInputs.cache
@@ -46,3 +45,4 @@ C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\FootballSt
 C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.dll
 C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.pdb
 C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.genruntimeconfig.cache
+C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csprojAssemblyReference.cache

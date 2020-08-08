@@ -22,8 +22,21 @@
 
     <div class="form-group">
         @Html.LabelFor(n => n.BuildDate)
-        @Html.TextBoxFor(b => b.BuildDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.BuildDate.ToString("yyyy-MM-dd") })
+        @Html.TextBoxFor(b => b.BuildDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.BuildDate.ToString("dd-MM-yyyy") })
         @Html.ValidationMessageFor(n => n.BuildDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.StadiumImage)
+        @Html.TextBoxFor(n => n.StadiumImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.StadiumImage, "", new { @class = "text-danger" })
+    </div>
+
+    <div style="padding:10px;">
+        @if (Model.StadiumImage != "")
+        {
+            <img src="~/images/Stadium/@Model.StadiumImage" alt="Stadium"width="250" height="200" />
+        }
     </div>
 
     <div class="form-group">

@@ -25,7 +25,26 @@
     <div class="form-group">
         @Html.LabelFor(n => n.Nationality)
         @Html.TextBoxFor(g => g.Nationality, new { @class = "form-control" })
-     
+
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.PlayerImage)
+        @Html.TextBoxFor(g => g.PlayerImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.PlayerImage, "", new { @class = "text-danger" })
+    </div>
+
+    <div style="padding:10px;">
+        @if (Model.PlayerImage != "")
+        {
+            <img src="~/images/Player/@Model.PlayerImage" alt="Player" width="200" height="250" />
+        }
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.ClubId)
+        @Html.DropDownListFor(n => n.ClubId, new SelectList(ViewBag.Clubs, "ClubId", "ClubName"), "Contracted by club", new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.ClubId, "", new { @class = "text-danger" })
+    </div>
 
 
     </div>

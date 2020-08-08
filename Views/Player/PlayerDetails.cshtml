@@ -1,0 +1,36 @@
+﻿@model PlayerViewModel
+@{
+    ViewData["Title"] = "PlayerDetails";
+}
+
+<h1>@Model.PlayerName</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td><b>Player Name</b></td>
+            <td>@Model.PlayerName</td>
+        </tr>
+    <td><b>Birth Date</b></td>
+    <td>@Model.BirthDate.ToString("dd-MM-yyyy")</td>
+    </tr>
+    <tr>
+        <td><b>Nationality</b></td>
+        <td>@Model.Nationality</td>
+    </tr>
+    <tr>
+        <td><b>Contract with club</b></td>
+        <td>@Model.Club.ClubName</td>
+    </tr>
+    </thead>
+</table>
+
+
+<div style="padding:10px;">
+    @if (Model.PlayerImage != "")
+    {
+        <img src="~/images/Player/@Model.PlayerImage" alt="Player" width="200" height="250" />
+    }
+</div>
+
+

@@ -76,7 +76,10 @@ namespace FootballStarz.Migrations
                     b.Property<int>("ClubId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ClubName");
+                    b.Property<string>("ClubLogo");
+
+                    b.Property<string>("ClubName")
+                        .IsRequired();
 
                     b.Property<DateTime>("Founded");
 
@@ -96,9 +99,13 @@ namespace FootballStarz.Migrations
 
                     b.Property<int>("ClubId");
 
-                    b.Property<string>("Nationality");
+                    b.Property<string>("Nationality")
+                        .IsRequired();
 
-                    b.Property<string>("PlayerName");
+                    b.Property<string>("PlayerImage");
+
+                    b.Property<string>("PlayerName")
+                        .IsRequired();
 
                     b.HasKey("PlayerId");
 
@@ -114,7 +121,10 @@ namespace FootballStarz.Migrations
 
                     b.Property<int>("ClubId");
 
-                    b.Property<string>("Location");
+                    b.Property<string>("Location")
+                        .IsRequired();
+
+                    b.Property<string>("StadiumImage");
 
                     b.Property<string>("StadiumName")
                         .IsRequired();

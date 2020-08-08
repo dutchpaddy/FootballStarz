@@ -35,11 +35,11 @@ else
         <tr>
             <td>@std.StadiumName</td>
             <td>@std.Location</td>
-            <td>@std.BuildDate</td>
+            <td>@std.BuildDate.ToString("dd-MM-yyyy")</td>
             @if (SignInManager.IsSignedIn(User))
             {
-                <td>@Html.ActionLink("Edit Stadium", "EditStadium", "Stadium", new { @id = std.StadiumId })</td>
-                <td>@Html.ActionLink("Delete Stadium", "DeleteStadium", "Stadium", new { @id = std.StadiumId })</td>
+                <td>@Html.ActionLink("Edit", "EditStadium", "Stadium", new { @id = std.StadiumId })</td>
+                <td>@Html.ActionLink("Delete", "DeleteStadium", "Stadium", new { @id = std.StadiumId })</td>
                 <td>@Html.ActionLink("Details", "StadiumDetails", "Stadium", new { @id = std.StadiumId })</td>
             }
         </tr>

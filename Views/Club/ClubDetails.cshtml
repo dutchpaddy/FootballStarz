@@ -2,48 +2,58 @@
 @{
     ViewData["Title"] = "ClubDetails";
 }
+    <h1>@Model.ClubName</h1>
+
 <table class="table table-striped">
     <thead>
-    <th>Club Name</th>
-    <th>Founded</th>
-    <th>Home Stadium</th>
-    </thead>
-    <tbody>
         <tr>
+            <td><b>Club Name</b></td>
             <td>@Model.ClubName</td>
-            <td>@Model.Founded</td>
-            <td>@Model.Stadium.StadiumName</td>
         </tr>
-    </tbody>
+    <td><b>Founded</b></td>
+    <td>@Model.Founded.ToString("dd-MM-yyyy")</td>
+    </tr>
+    <tr>
+        <td><b>Home Stadium</b></td>
+        <td>@Model.Stadium.StadiumName</td>
+    </tr>
+    </thead>
 </table>
-<div class="text-center">
-    <h2>These are the players that have a contract with club: <b>@Model.ClubName</b></h2>
-</div>
-<hr />
 
-@if (Model.Players.Count() == 0)
-{
-    <h2 class="alert-info">
-        There are no players with this club.
-    </h2>
-}
-else
-{
-    <table class="table table-striped">
-        <thead>
-        <th>Player Name</th>
-        <th>Date of Birth</th>
-        <th>Nationality</th>
-        </thead>
-        <tbody>
-            @foreach (Player dfk in Model.Players)
-            {
-                <tr>
-                    <td>@dfk.PlayerName</td>
-                    <td>@dfk.BirthDate</td>
-                    <td>@dfk.Nationality</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<div style="padding:10px;">
+    @if (Model.ClubLogo!= "")
+    {
+    <img src="~/images/Logos/@Model.ClubLogo" alt="Club Logo" width="200" height="200" />
+    }
+
+    <div class="text-left">
+        <h3>These are the players that have a contract with club: <b>@Model.ClubName</b></h3>
+    </div>
+    <hr />
+
+    @if (Model.Players.Count() == 0)
+    {
+        <h2 class="alert-info">
+            There are no players with this club.
+        </h2>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+            <th>Player Name</th>
+            <th>Date of Birth</th>
+            <th>Nationality</th>
+            </thead>
+            <tbody>
+                @foreach (Player dfk in Model.Players)
+                {
+                    <tr>
+                        <td>@dfk.PlayerName</td>
+                        <td>@dfk.BirthDate.ToString("dd-MM-yyyy")</td>
+                        <td>@dfk.Nationality</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }

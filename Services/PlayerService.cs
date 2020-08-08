@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FootballStarz.Data;
 using FootballStarz.Models;
 using FootballStarz.ViewModels;
+using SQLitePCL;
 
 namespace FootballStarz.Services
 {
@@ -44,6 +45,7 @@ namespace FootballStarz.Services
             oldPlayer.PlayerName = newPlayer.PlayerName;
             oldPlayer.BirthDate = newPlayer.BirthDate;
             oldPlayer.Nationality = newPlayer.Nationality;
+            oldPlayer.PlayerImage = newPlayer.PlayerImage;
             oldPlayer.ClubId = newPlayer.ClubId;
             _context.SaveChanges();
         }
@@ -59,6 +61,27 @@ namespace FootballStarz.Services
             };
 
             return playerVM;
+
+        }
+
+        public Club GetSingleClubById(int id) => _context.Clubs.Where(n => n.ClubId == id).FirstOrDefault();
+
+        public PlayerViewModel PlayerDetails(int id)
+        {
+            Player player = GetSinglePlayerById(id);
+            Club club = GetSingleClubById(player.ClubId);
+
+            PlayerViewModel clubVM = new PlayerViewModel()
+            {
+                PlayerId = player.PlayerId,
+                PlayerName = player.PlayerName,
+                BirthDate = player.BirthDate,
+                Nationality = player.Nationality,
+                PlayerImage = player.PlayerImage,
+                Club = club
+            };
+
+            return clubVM;
 
         }
     }

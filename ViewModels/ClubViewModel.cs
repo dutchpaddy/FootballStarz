@@ -14,6 +14,8 @@ namespace FootballStarz.ViewModels
 
         public DateTime Founded { get; set; }
 
+        public string ClubLogo { get; set; }
+
         public Stadium Stadium { get; set; }
         
         public List<Player> Players { get; set; }

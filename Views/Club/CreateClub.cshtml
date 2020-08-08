@@ -6,19 +6,29 @@
 
 @Html.ActionLink("Show All Clubs", "All", "Club")
 
-@using (Html.BeginForm("ClubCreated","Club", FormMethod.Post))
+@using (Html.BeginForm("ClubCreated", "Club", FormMethod.Post))                             @* For asp-for format see DataAnnotationsExample *@
 {
     <div class="form-group">
         @Html.LabelFor(n => n.ClubName)
         @Html.TextBoxFor(n => n.ClubName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(n=>n.ClubName, "", new{ @class="text-danger"})
+        @Html.ValidationMessageFor(n => n.ClubName, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         @Html.LabelFor(n => n.Founded)
-        @Html.TextBoxFor(a => a.Founded, new { @class = "form-control", @type="date" })
+        @Html.TextBoxFor(a => a.Founded, new { @class = "form-control", @type = "date" })
     </div>
 
+    <div class="form-group">
+        @Html.LabelFor(n => n.ClubLogo)
+        @Html.TextBoxFor(a => a.ClubLogo, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(n => n.StadiumId)
+        @Html.DropDownListFor(n => n.StadiumId, new SelectList(ViewBag.Stadiums, "StadiumId", "StadiumName"), "Select a home stadium", new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.StadiumId, "", new { @class = "text-danger" })
+    </div>
 
     <button type="submit" class="btn btn-success">Create Club</button>
 }
