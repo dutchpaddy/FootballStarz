@@ -24,7 +24,7 @@ namespace FootballStarz.Models
 
         [Display(Name = "Club Logo")]
         [DataType(DataType.Text)]
-        [ClubLogoValidation]
+        //[ClubLogoValidation]
         public string ClubLogo { get; set; }
 
         [Required(ErrorMessage = "Stadium name required.")]

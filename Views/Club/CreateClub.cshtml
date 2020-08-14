@@ -4,9 +4,9 @@
 }
 <h2>Create New Club</h2>
 
-@Html.ActionLink("Show All Clubs", "All", "Club")
+@Html.ActionLink("Show All Clubs", "AllClubs", "Club")
 
-@using (Html.BeginForm("ClubCreated", "Club", FormMethod.Post))                             @* For asp-for format see DataAnnotationsExample *@
+@using (Html.BeginForm("ClubCreated", "Club", FormMethod.Post))
 {
     <div class="form-group">
         @Html.LabelFor(n => n.ClubName)
@@ -29,7 +29,14 @@
         @Html.DropDownListFor(n => n.StadiumId, new SelectList(ViewBag.Stadiums, "StadiumId", "StadiumName"), "Select a home stadium", new { @class = "form-control" })
         @Html.ValidationMessageFor(n => n.StadiumId, "", new { @class = "text-danger" })
     </div>
-
+    <div>
+        @if (!(Model.ClubLogo == null))
+        {
+                <img src="~/images/Logos/@Model.ClubLogo" alt="Club Logo" width="200" height="200" />
+        }
+        </div>
+    <div class="text-left">
     <button type="submit" class="btn btn-success">Create Club</button>
+    </div>
 }
 

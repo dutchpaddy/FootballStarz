@@ -51,15 +51,17 @@ namespace FootballStarz.Validator
     {
         public static bool CheckImageFormat(string fmt)
         {
-            var s = fmt.Substring(fmt.Length - 4, 4);
-            if (s.ToUpper() == ".JPG")
+            bool ret = false;
+            if (fmt == null)
             {
-                return true;
+                    ret = true;
             }
-            else
+            if (fmt.Substring(fmt.Length - 4, 4).ToUpper() == ".JPG")
             {
-                return false;
+                    ret = true;
             }
+            
+            return ret;
         }
     }
 

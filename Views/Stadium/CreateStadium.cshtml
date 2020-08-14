@@ -33,7 +33,7 @@
     </div>
 
     <div style="padding:10px;">
-        @if (Model.StadiumImage != "")
+        @if (!(Model.StadiumImage == null))
         {
             <img src="~/images/Logos/@Model.StadiumImage" alt="Stadium" width="250" height="200" />
         }
