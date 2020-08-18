@@ -54,7 +54,7 @@ namespace FootballStarz.Validator
             bool ret = false;
             if (fmt == null)
             {
-                    ret = true;
+                    return true;
             }
             if (fmt.Substring(fmt.Length - 4, 4).ToUpper() == ".JPG")
             {

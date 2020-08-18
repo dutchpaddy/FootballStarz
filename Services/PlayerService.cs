@@ -22,6 +22,14 @@ namespace FootballStarz.Services
         {
             return _context.Players.ToList();
         }
+        public List<Player> GetForeignPlayers()
+        {
+            var foreigners = from c in _context.Players             // LINQ!
+                             where c.Nationality != "Netherlands"
+                             select c;
+                
+            return foreigners.ToList();
+        }
 
         public void AddPlayer(Player player)
         {

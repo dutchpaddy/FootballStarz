@@ -29,8 +29,13 @@ namespace FootballStarz.Controllers
         {
                 return View(_PlayerService.GetAllPlayers());
         }
+        public IActionResult AllForeignPlayers()
+        {
+            
+            return View(_PlayerService.GetForeignPlayers());
 
-            public IActionResult CreatePlayer()
+        }
+        public IActionResult CreatePlayer()
         {
             ViewBag.Clubs = _ClubService.GetAllClubs();
             return View();

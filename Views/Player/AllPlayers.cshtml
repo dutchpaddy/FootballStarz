@@ -8,10 +8,7 @@
 
 <h2>@ViewData["PlayerMessage"]</h2>
 
-@Html.ActionLink("Create Player", "CreatePlayer", "Player")
-
-
-
+@Html.ActionLink("Create Player", "CreatePlayer", "Player") | @Html.ActionLink("Show foreign players", "AllForeignPlayers", "Player")
 
 
 @if (Model.Count() == 0)
@@ -24,34 +21,34 @@
 }
 else
 {
-<table class="table">
-    <thead>
-    <th>Player Name</th>
-    <th>Birth Date</th>
-    <th>Nationality</th>
-    @if (SignInManager.IsSignedIn(User))
-    {
-        <th>Edit</th>
-        <th>Delete</th>
-        <th>Details</th>
-    }
-    </thead>
-    <tbody>
-        @foreach (Player player in Model)
+    <table class="table">
+        <thead>
+        <th>Player Name</th>
+        <th>Birth Date</th>
+        <th>Nationality</th>
+        @if (SignInManager.IsSignedIn(User))
         {
-            <tr>
-                <td>@player.PlayerName</td>
-                <td>@player.BirthDate.ToString("yyyy-MM-dd")</td>
-                <td>@player.Nationality</td>
-                @if (SignInManager.IsSignedIn(User))
-                {
-                    <td>@Html.ActionLink("Edit", "EditPlayer", "Player", new { @id = player.PlayerId })</td>
-                    <td>@Html.ActionLink("Delete", "DeletePlayer", "Player", new { @id = player.PlayerId })</td>
-                    <td>@Html.ActionLink("Details", "PlayerDetails", "Player", new { @id = player.PlayerId })</td>
-                }
-            </tr>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Details</th>
         }
+        </thead>
+        <tbody>
+            @foreach (Player player in Model)
+            {
+                <tr>
+                    <td>@player.PlayerName</td>
+                    <td>@player.BirthDate.ToString("yyyy-MM-dd")</td>
+                    <td>@player.Nationality</td>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <td>@Html.ActionLink("Edit", "EditPlayer", "Player", new { @id = player.PlayerId })</td>
+                        <td>@Html.ActionLink("Delete", "DeletePlayer", "Player", new { @id = player.PlayerId })</td>
+                        <td>@Html.ActionLink("Details", "PlayerDetails", "Player", new { @id = player.PlayerId })</td>
+                    }
+                </tr>
+            }
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
 }

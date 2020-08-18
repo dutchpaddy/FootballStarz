@@ -22,6 +22,7 @@ namespace FootballStarz.Models
         [DataType(DataType.Date)]
         public DateTime Founded { get; set; }
 
+        [Required(ErrorMessage = "Club Logo required.")]
         [Display(Name = "Club Logo")]
         [DataType(DataType.Text)]
         //[ClubLogoValidation]

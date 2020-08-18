@@ -10,6 +10,7 @@ namespace FootballStarz.Services
     public interface IPlayerService
     {
         List<Player> GetAllPlayers();
+        List<Player> GetForeignPlayers();
         void AddPlayer(Player player);
         Player GetSinglePlayerById(int id);
         Club GetSingleClubById(int id);

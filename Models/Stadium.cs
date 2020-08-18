@@ -27,6 +27,8 @@ namespace FootballStarz.Models
         [DataType(DataType.Text)]
 
         public string Location { get; set; }
+
+        [Required(ErrorMessage = "Stadium Image required.")]
         [DataType(DataType.Text)]
         [Display(Name = "Stadium Image")]
 

@@ -29,10 +29,11 @@ namespace FootballStarz.Models
         [DataType(DataType.Text)]
 
         public string Nationality { get; set; }
-        
+
+        [Required(ErrorMessage = "Player image required.")]
         [Display(Name = "Player Image")]
         [DataType(DataType.Text)]
-        [PlayerImageValidation]
+        //[PlayerImageValidation]
 
         public string PlayerImage { get; set; }
 
