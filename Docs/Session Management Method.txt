@@ -1,0 +1,76 @@
+﻿1. ViewModels\LogonViewModel
+    Create a model that will hold the user data. This can only be a username or email address
+    Include that model in each transaction page. This ensures that the app keeps track of the user, his roles etc
+
+2. Controller\AccountController\LoggedIn(LoginViewModel LoginVM)
+    After completing the Login view, control is passed to this action method.
+    Since LoginViewModel is the template model for that view, it is passed to the LoggedIn method
+
+    Now the method checks the validity of the subsequent login, and then redirects to Club\AllClubs, passing the LoginViewModel object.
+
+           if (result.Succeeded)
+            {
+                //return View("AllClubs", loginVM);
+               
+                return RedirectToAction("AllClubs", "Club", new RouteValueDictionary(LoginVM));
+            }
+
+    Hence, a session is born through inclusion of the LoginViewModel as a habit.
+
+3. At Clubs/Allclubs, template model is ClubsListViewModel, which is a List<Club> and the LoginViewModel object.
+
+    public IActionResult AllClubs(LoginViewModel LoginVM)
+        {
+            var Clubs =_ClubService.GetAllClubs();    // complete with clubs list
+            var ClubsLVM = new ClubsListViewModel      // complete the model
+            {
+                LoggedInUser = LoginVM,
+                Clubs = Clubs   
+            };
+            return View(ClubsLVM);
+        }
+
+4. In AllClubs view, the list of clubs is displayed for selection. The selection is effected thus:
+
+            @foreach (Club club in Model.Clubs)
+            {
+                <tr>
+                    <td>@club.ClubName</td>
+                    <td>@club.Founded.ToString("dd-MM-yyyy")</td>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <td>@Html.ActionLink("Details", "ClubDetails", "Club", routeValues: new { Id = club.ClubId, Model.LoggedInUser.Email, Model.LoggedInUser.Password, Model.LoggedInUser.RememberMe })</td>
+                    }
+                </tr>
+            }
+
+  The routeValues clause in the Html.ActionLink method sends the club id, and the attributes of the LoginViewModel LoggedInUser to the Club controller.
+  In this case, the Club/ClubDetails action is targeted.
+
+5. The Club/ClubDetails action is a terminus, and merely displays the club data. As the session does not stop with Club, the LoginView should be retained.
+
+    public IActionResult ClubDetails(int Id, LoginViewModel LoggedInUser)
+            {
+                var Club = _ClubService.ClubDetails(Id);
+                var ClubVM = new ClubViewModel
+                {
+                    ClubId = Id,
+                    ClubName = Club.ClubName,
+                    Founded = Club.Founded,
+                    ClubLogo = Club.ClubLogo,
+                    Stadium = Club.Stadium,
+                    Players = Club.Players,
+                    LoggedInUser = LoggedInUser
+                };
+
+                return View(ClubVM);
+            }
+
+6. REMARKS
+
+    1. Including the complete LoginView is a security hazard. It is preferred to only carry around a user name this way, and read in accessory data when needed.
+        For example, LoginView (the name is entirely up to you by the way) could well hold [String Username, Boolesn BeholdSession].
+        When building a view you could take the Username and read the table of Roles to check if a page or components thereof are on-limits etc.
+        Provided the Role table is short and simple, the reads should hardly be noticeable.
+    2. Ending the session is done by merely setting the Username to space.
+        When making use of an authentication service like Microsoft Identity, make sure log off the user from that service first.

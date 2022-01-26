@@ -1,0 +1,6 @@
+﻿FOOTBALLSTARZ Backups
+
+Location:
+
+(op docker server) /var/opt/mssql/data/FOOTBALLSTARZ...
+

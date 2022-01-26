@@ -1,0 +1,41 @@
+﻿About: FOOTBALLSTARZ
+
+FootballStarz is an ASP.NET Core MVC web application.
+Its purpose is to have a toy project to try out and experiment webdevelopment.
+
+
+FootballStarz evolves around 3 major entities:
+1. Stadiums, home of
+2. Clubs, that contract
+3. Players to play for them
+
+Simple as that.
+
+Functions on these entities are:
+1. Create them
+2. Update (Edit) them,
+3. Delete them.
+4. Show their Details
+
+CRUD, so to speak.
+
+As FootballStarz is based on .Net, running in ASP.Net Core, it is OS independent.
+
+The development was started on a Windows 10 box, up to December 2020.
+From that month on the development was migrated to a MacOS 11 Big Sur machine and continued.
+All without a single change in code ! (only the appsettings.json was updated for database connection).
+
+After migration of the database the app is up and running perfectly.
+
+HAIL BILL!
+
+January 9th, 2021
+Eric van Berkel,
+Geldrop Netherlands
+
+
+History
+-----------------------------
+Initial             10-DEC-20
+Port to MacOs       09-JAN-21
+Port to Azure       01-JAN-22
