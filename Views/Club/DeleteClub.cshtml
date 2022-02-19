@@ -1,14 +1,14 @@
 ﻿@model ClubViewModel
-@{
-    ViewData["Title"] = "DeleteClub";
-}
 
-<div class="text-center">
-    <h2 class="text-danger">You are about to delete the club: @Model.ClubName</h2>
+@{ ViewData["Title"] = "Delete Club"; }
+
+<div class="text-left">
+    <h2 class="text-danger">You are about to delete the Club: @Model.ClubName</h2>
     <h3>Are you sure?</h3>
 </div>
 
-@Html.ActionLink("Cancel","AllClubs","Club")
-@Html.ActionLink("Yes, sure!","ClubDeleted","Club",new {@id = Model.ClubId })
+@Html.ActionLink("Cancel", "AllClubs", "Club", null, new { @class = "btn btn-default" })
+@Html.ActionLink("Yes, sure!", "ClubDeleted", "Club", new { @id = Model.ClubId }, new { @class = "btn btn-danger" })
+
 
 

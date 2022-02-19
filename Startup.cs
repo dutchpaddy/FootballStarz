@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -11,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using FootballStarz.Services;
 using Microsoft.AspNetCore.Identity;
 using FootballStarz.Models;
+using FootballStarz.Interfaces;
+using FootballStarz.VMServiceInterfaces;
+using Microsoft.Extensions.Logging;
+using FootballStarz.ViewModelServices;
 
 namespace FootballStarz
 {
@@ -30,9 +31,15 @@ namespace FootballStarz
 
             services.AddDbContext<AppDbContext>(options => 
             options.UseSqlServer(_connection));
-            services.AddTransient<IClubService, ClubService>();
+
+            services.AddTransient<IClubService, ClubService>();                         // Services
             services.AddTransient<IStadiumService, StadiumService>();
             services.AddTransient<IPlayerService, PlayerService>();
+
+            services.AddTransient<IPlayerViewModelService, PlayerViewModelService>();   // ViewModel Services
+            services.AddTransient<IClubViewModelService, ClubViewModelService>();
+            services.AddTransient<IStadiumViewModelService, StadiumViewModelService>();
+
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.Configure<IdentityOptions>(options =>
             {
@@ -59,31 +66,50 @@ namespace FootballStarz
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext context, ILoggerFactory loggerFactory)
         {
-            context.Database.Migrate();
+            ILogger _Logger = loggerFactory.CreateLogger("Information");
+
+            context.Database.EnsureCreated();
 
             if (env.IsDevelopment())
             {
+                _Logger.LogInformation(System.DateTime.Now.ToString() + ":Startup: *** Environment = Development");
+
                 app.UseBrowserLink();
-                //app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
+                //app.UseExceptionHandler("/Home/Error");
+            }
+            else if (env.IsProduction())
+            {
+                // Production environment
+                _Logger.LogInformation(System.DateTime.Now.ToString() + ":Startup: *** Environment = Production");
+
+                app.UseBrowserLink();
                 app.UseExceptionHandler("/Home/Error");
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                _Logger.LogCritical(System.DateTime.Now.ToString() + ":<<<< HostingEnvironment specified neither Development nor Production! >>>");
             }
 
+
+            _Logger.LogInformation(System.DateTime.Now.ToString() + ":Calling: app.UseStaticFiles();");
             app.UseStaticFiles();
+            _Logger.LogInformation(System.DateTime.Now.ToString() + ":Calling: app.UseAuthentication();");
             app.UseAuthentication();
-            app.UseStatusCodePages();
+
+            _Logger.LogInformation(System.DateTime.Now.ToString() + "Calling: app.UseMvc();");
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Club}/{action=AllClubs}/{id?}");
+                    template: "{controller=Account}/{action=Login}");
             });
+
+            _Logger.LogInformation(System.DateTime.Now.ToString() + "End of Configure()");
+
         }
     }
 }

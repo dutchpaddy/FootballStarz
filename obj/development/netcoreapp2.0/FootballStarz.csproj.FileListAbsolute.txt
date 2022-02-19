@@ -1,0 +1,15 @@
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/appsettings.Development.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/appsettings.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/bundleconfig.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/FootballStarz.deps.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/FootballStarz.runtimeconfig.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/FootballStarz.runtimeconfig.dev.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/FootballStarz.dll
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/development/netcoreapp2.0/FootballStarz.pdb
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/development/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/development/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/development/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/development/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/development/netcoreapp2.0/FootballStarz.dll
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/development/netcoreapp2.0/FootballStarz.pdb
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/development/netcoreapp2.0/FootballStarz.genruntimeconfig.cache

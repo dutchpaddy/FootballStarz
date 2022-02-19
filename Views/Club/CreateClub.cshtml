@@ -1,4 +1,4 @@
-﻿@model Club
+﻿@model ClubViewModel
 @{
     ViewData["Title"] = "CreateClub";
 }
@@ -9,25 +9,26 @@
 @using (Html.BeginForm("ClubCreated", "Club", FormMethod.Post))
 {
     <div class="form-group">
-        @Html.LabelFor(n => n.ClubName)
-        @Html.TextBoxFor(n => n.ClubName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(n => n.ClubName, "", new { @class = "text-danger" })
+        @Html.LabelFor(n => Model.ClubName)
+        @Html.TextBoxFor(n => Model.ClubName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => Model.ClubName, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(n => n.Founded)
-        @Html.TextBoxFor(a => a.Founded, new { @class = "form-control", @type = "date" })
+        @Html.LabelFor(n => Model.Founded)
+        @Html.TextBoxFor(n => Model.Founded, new { @class = "form-control", @type = "date" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(n => n.ClubLogo)
-        @Html.TextBoxFor(a => a.ClubLogo, new { @class = "text-danger" })
+        @Html.LabelFor(n => Model.ClubLogo)
+        @Html.TextBoxFor(n => Model.ClubLogo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => Model.ClubLogo, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(n => n.StadiumId)
-        @Html.DropDownListFor(n => n.StadiumId, new SelectList(ViewBag.Stadiums, "StadiumId", "StadiumName"), "Select a home stadium", new { @class = "form-control" })
-        @Html.ValidationMessageFor(n => n.StadiumId, "", new { @class = "text-danger" })
+        @Html.LabelFor(n => Model.StadiumId)
+        @Html.DropDownListFor(n => Model.StadiumId, new SelectList(ViewBag.Stadiums, "StadiumId", "StadiumName"), "Select a home stadium", new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => Model.StadiumId, "", new { @class = "text-danger" })
     </div>
 
     <div class="text-left">

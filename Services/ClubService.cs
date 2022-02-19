@@ -5,15 +5,21 @@ using System.Threading.Tasks;
 using FootballStarz.Data;
 using FootballStarz.Models;
 using FootballStarz.ViewModels;
+using FootballStarz.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace FootballStarz.Services
 {
     public class ClubService : IClubService
     {
         private AppDbContext _context;
-        public ClubService(AppDbContext context)
+        private readonly ILogger _logger; 
+
+        public ClubService(ILogger<ClubService> logger, AppDbContext context)
         {
+            _logger = logger;
             _context = context;
+
         }
 
 
@@ -22,8 +28,28 @@ namespace FootballStarz.Services
             return _context.Clubs.ToList();
         }
 
+        public List<Stadium>GetAllStadiums()
+        {
+            return _context.Stadiums.ToList();
+        }
+
+        public List<Player> GetAllPlayers()
+        {
+            return _context.Players.ToList();
+        }
+
+        public List<String> GetAllClubLogos()
+        {
+             List<String> Logos = (from c in _context.Clubs
+                                  select c.ClubLogo).ToList<String>();
+
+            return Logos;
+        }
+    
         public void AddClub(Club club)
         {
+            _logger.LogInformation($"AddClub- club: {club}");
+
             _context.Clubs.Add(club);
             _context.SaveChanges();
         }
@@ -32,6 +58,8 @@ namespace FootballStarz.Services
 
         public void UpdateClub(Club newClub)
         {
+            _logger.LogInformation($"UpdateClub- newClub: {newClub.ClubName}");
+
             Club oldClub = GetSingleClubById(newClub.ClubId);
 
             oldClub.ClubId = newClub.ClubId;
@@ -45,6 +73,8 @@ namespace FootballStarz.Services
 
         public void DeleteClub(int id)
         {
+            _logger.LogInformation($"DeleteClub- id: {id}");
+
             Club clubToBeDeleted = GetSingleClubById(id);
             _context.Clubs.Remove(clubToBeDeleted);
             _context.SaveChanges();
@@ -57,42 +87,46 @@ namespace FootballStarz.Services
 
         public ClubViewModel ClubDeletionConfirmation(int id)
         {
-            Club club = GetSingleClubById(id);
-            Stadium stadium = GetStadiumByStadiumId(club.StadiumId);
-            List<Player> players = GetPlayersByClubId(club.ClubId);
+            _logger.LogInformation($"ClubDeletionConfirmation- id: {id}");
 
-            ClubViewModel clubVM = new ClubViewModel()
+            Club Club = GetSingleClubById(id);
+            Stadium Stadium = GetStadiumByStadiumId(Club.StadiumId);
+            List<Player> Players = GetPlayersByClubId(Club.ClubId);
+
+            ClubViewModel ClubVM = new ClubViewModel()
             {
-                ClubId = club.ClubId,
-                ClubName = club.ClubName,
-                Founded = club.Founded,
-                ClubLogo = club.ClubLogo,
-                Stadium = stadium,
-                Players = players
+                ClubId = Club.ClubId,
+                ClubName = Club.ClubName,
+                Founded = Club.Founded,
+                ClubLogo = Club.ClubLogo,
+                Stadium = Stadium,
+                Players = Players
             };
 
-            return clubVM;
+            return ClubVM;
 
         }
 
-        public ClubViewModel ClubDetails(int id)
-        {
-            Club club = GetSingleClubById(id);
-            Stadium stadium = GetStadiumByStadiumId(club.StadiumId);
-            List<Player> players = GetPlayersByClubId(club.ClubId);
+        //public ClubViewModel ClubDetails(int id)
+        //{
+        //    _logger.LogInformation($"ClubDetails- id: {id}");
 
-            ClubViewModel clubVM = new ClubViewModel()
-            {
-                ClubId = club.ClubId,
-                ClubName = club.ClubName,
-                Founded = club.Founded,
-                ClubLogo = club.ClubLogo,
-                Stadium = stadium,
-                Players = players
-            };
+        //    Club club = GetSingleClubById(id);
+        //    Stadium stadium = GetStadiumByStadiumId(club.StadiumId);
+        //    List<Player> players = GetPlayersByClubId(club.ClubId);
 
-            return clubVM;
+        //    ClubViewModel clubVM = new ClubViewModel()
+        //    {
+        //        ClubId = club.ClubId,
+        //        ClubName = club.ClubName,
+        //        Founded = club.Founded,
+        //        ClubLogo = club.ClubLogo,
+        //        Stadium = stadium,
+        //        Players = players
+        //    };
 
-        }
+        //    return clubVM;
+
+        //}
     }
 }

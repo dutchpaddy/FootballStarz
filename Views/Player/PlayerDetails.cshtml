@@ -1,7 +1,9 @@
-﻿@model PlayerViewModel
-@{
-    ViewData["Title"] = "PlayerDetails";
-}
+﻿@using Microsoft.AspNetCore.Identity;
+@using FootballStarz.Classes;
+@model PlayerViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{ ViewData["Title"] = "PlayerDetails"; }
 
 <h1>@Model.PlayerName</h1>
 
@@ -25,12 +27,18 @@
     </thead>
 </table>
 
+@if (SignInManager.IsSignedIn(User))
+{
+<table>
+    <td>@Html.ActionLink("Edit " + @Model.PlayerName, "EditPlayer", "Player", new { @Id = @Model.PlayerId })</td>
+    <td>&nbsp;|&nbsp;</td>
+    <td>@Html.ActionLink("Delete " + @Model.PlayerName, "DeletePlayer", "Player", new { @Id = @Model.PlayerId })</td>
+</table>}
+
+<br />
 
 <div style="padding:10px;">
     @if (Model.PlayerImage != "")
     {
-        <img src="~/images/Player/@Model.PlayerImage" alt="Player" width="200" height="250" />
-    }
+<img src="@Constants.IMG_PREFIX_PLAYER@Model.PlayerImage" alt="Player" width="200" height="250" />}
 </div>
-
-

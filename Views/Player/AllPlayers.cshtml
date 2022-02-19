@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model List<Player>
+@model List<PlayerViewModel>
 @inject SignInManager<ApplicationUser> SignInManager
 
 @{
@@ -8,7 +8,8 @@
 
 <h2>@ViewData["PlayerMessage"]</h2>
 
-@Html.ActionLink("Create Player", "CreatePlayer", "Player") | @Html.ActionLink("Show foreign players", "AllForeignPlayers", "Player")
+@Html.ActionLink("Create Player", "CreatePlayer", "Player")
+@* @Html.ActionLink("Show foreign players", "AllForeignPlayers", "Player") | @Html.ActionLink("Batch Edit players", "BatchEditPlayers", "Player") *@
 
 
 @if (Model.Count() == 0)
@@ -26,6 +27,7 @@ else
         <th>Player Name</th>
         <th>Birth Date</th>
         <th>Nationality</th>
+        <th>Club</th>
         @if (SignInManager.IsSignedIn(User))
         {
             <th>Edit</th>
@@ -34,12 +36,13 @@ else
         }
         </thead>
         <tbody>
-            @foreach (Player player in Model)
+            @foreach (PlayerViewModel player in @Model)
             {
                 <tr>
                     <td>@player.PlayerName</td>
-                    <td>@player.BirthDate.ToString("yyyy-MM-dd")</td>
+                    <td>@player.BirthDate.ToString("dd-MM-yyyy")</td>
                     <td>@player.Nationality</td>
+                    <td>@player.Club.ClubName</td>
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <td>@Html.ActionLink("Edit", "EditPlayer", "Player", new { @id = player.PlayerId })</td>

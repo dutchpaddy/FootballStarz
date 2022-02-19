@@ -1,0 +1,38 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{A0DA2746-DC15-45C2-836B-8946C94CEBAB}|FootballStarz">
+  <MonoDevelop.Ide.ItemProperties.FootballStarz PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+    <Files>
+      <File FileName="Startup.cs" Line="39" Column="110" IsPinned="True" />
+      <File FileName="Controllers/AccountController.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Controllers/StadiumController.cs" IsPinned="True" />
+      <File FileName="Controllers/ClubController.cs" IsPinned="True" />
+      <File FileName="Controllers/PlayerController.cs" Line="92" Column="10" IsPinned="True" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FootballStarz" expanded="True">
+            <Node name="FootballStarz" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders>
+    <String>/Volumes/LaCie/Fileserver/Projects (FS)</String>
+  </Debugger.DebugSourceFolders>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/Views/Club/AllClubs.cshtml" relfile="Views/Club/AllClubs.cshtml" line="1" column="1" />
+      <Breakpoint enabled="false" file="/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/Views/Account/Login.cshtml" relfile="Views/Account/Login.cshtml" line="10" column="1" />
+      <Breakpoint enabled="false" file="/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/Views/Club/AllClubs.cshtml" relfile="Views/Club/AllClubs.cshtml" line="9" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

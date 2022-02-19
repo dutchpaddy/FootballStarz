@@ -19,6 +19,13 @@ namespace FootballStarz
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                     .ConfigureLogging((context, logging) =>
+                     {
+                         logging.AddAzureWebAppDiagnostics();
+                         logging.AddConfiguration(context.Configuration.GetSection("Logging"));
+                         logging.AddDebug();
+                         logging.AddConsole();
+                     })
                 .UseStartup<Startup>()
                 .Build();
     }

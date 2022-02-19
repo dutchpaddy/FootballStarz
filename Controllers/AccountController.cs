@@ -1,29 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FootballStarz.ViewModels;
 using FootballStarz.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace FootballStarz.Controllers
 {
     public class AccountController : Controller
     {
+        private IHostingEnvironment _HostingEnv;
+        private IConfiguration _configuration;
+        private readonly ILogger _logger;
+
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+
+
+        public AccountController(IConfiguration configuration,
+                                IHostingEnvironment HostingEnvironment,
+                                ILogger<AccountController> logger,
+                                UserManager<ApplicationUser> userManager,
+                                SignInManager<ApplicationUser> signInManager)
         {
+            _configuration = configuration;
+            _HostingEnv = HostingEnvironment;
+            _logger = logger;
+
             _userManager = userManager;
             _signInManager = signInManager;
+
+
         }
 
         public IActionResult Login()
         {
             return View();
         }
-        public async Task<IActionResult> LoggedIn(LoginViewModel loginVM)
+
+
+        public async Task<IActionResult> LoggedIn(LoginViewModel LoginVM)
         {
             if (!ModelState.IsValid)
             {
@@ -31,13 +50,21 @@ namespace FootballStarz.Controllers
                 return View("Login");
             }
 
-            var result = await _signInManager.PasswordSignInAsync(loginVM.Email, loginVM.Password,loginVM.RememberMe,false);
+            _logger.LogInformation("AccountController- Model state VALID");
+
+            var result = await _signInManager.PasswordSignInAsync(LoginVM.Email, LoginVM.Password, true, false);
+            _logger.LogInformation($"_signInManager.PasswordSignInAsync returns:\t{result}");
+
             if (result.Succeeded)
             {
-                return RedirectToAction("AllClubs", "Club");
+                return RedirectToAction("AllClubs", "Club", new RouteValueDictionary(LoginVM));
             }
             else
+            {
+                _logger.LogInformation("AccountController- Sign in failed, back to login");
+
                 return View("Login");
+            }
         }
         public IActionResult Register()
         {
@@ -49,6 +76,7 @@ namespace FootballStarz.Controllers
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError(string.Empty, "Something went wrong");
+
                 return View("Register");
             }
 
@@ -57,8 +85,12 @@ namespace FootballStarz.Controllers
 
             if (result.Succeeded)
             {
+                _logger.LogInformation("AccountController- Succesful user creation");
+
                 return RedirectToAction("AllClubs", "Club");
             }
+
+            _logger.LogInformation("AccountController- Register failed, back to login");
 
             return View("Register");
         }
@@ -67,7 +99,10 @@ namespace FootballStarz.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("AllClubs", "Club");
+
+            _logger.LogInformation("AccountController- Succesfull logout");
+
+            return RedirectToAction("Login", "Account");
         }
     }
 }

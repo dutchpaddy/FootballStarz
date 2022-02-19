@@ -1,48 +1,140 @@
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfoInputs.cache
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfo.cs
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csproj.CoreCompileInputs.cache
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\appsettings.Development.json
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\appsettings.json
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\bundleconfig.json
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.dll
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.pdb
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.dll
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.pdb
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.genruntimeconfig.cache
-C:\SRC\C#\ASP.NET\Projects\A003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csprojAssemblyReference.cache
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\appsettings.Development.json
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\appsettings.json
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\bundleconfig.json
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.dll
-C:\Projects\FootballStarz\W003\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.pdb
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfoInputs.cache
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfo.cs
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csproj.CoreCompileInputs.cache
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.dll
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.pdb
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.genruntimeconfig.cache
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\appsettings.Development.json
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\appsettings.json
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\bundleconfig.json
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.dll
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\bin\Debug\netcoreapp2.0\WebApplication1.pdb
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csprojAssemblyReference.cache
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfoInputs.cache
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.AssemblyInfo.cs
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csproj.CoreCompileInputs.cache
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.dll
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\WebApplication1.pdb
-C:\SRC\C#\ASP.NET\Projects\A004\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.genruntimeconfig.cache
-C:\Projects\FootballStarz\W003\FootballStarz\obj\Debug\netcoreapp2.0\FootballStarz.csprojAssemblyReference.cache
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/appsettings.Development.json
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/appsettings.json
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/bundleconfig.json
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/Properties/launchSettings.json
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.deps.json
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.json
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.dev.json
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.dll
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/obj/Debug/netcoreapp2.0/WebApplication1.dll
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/obj/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+C:/SRC/C#/ASP.NET/Projects/A003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/appsettings.Development.json
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/Properties/launchSettings.json
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/appsettings.json
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/bundleconfig.json
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.deps.json
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.json
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.dev.json
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.dll
+C:/Projects/FootballStarz/W003/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/Projects/FootballStarz/W003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+C:/Projects/FootballStarz/W003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+C:/Projects/FootballStarz/W003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+C:/Projects/FootballStarz/W003/FootballStarz/obj/Debug/netcoreapp2.0/WebApplication1.dll
+C:/Projects/FootballStarz/W003/FootballStarz/obj/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/Projects/FootballStarz/W003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/appsettings.Development.json
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/appsettings.json
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/Properties/launchSettings.json
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/bundleconfig.json
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.deps.json
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.json
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.dev.json
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.dll
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/bin/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/obj/Debug/netcoreapp2.0/WebApplication1.dll
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/obj/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/SRC/C#/ASP.NET/Projects/A004/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+C:/Projects/FootballStarz/W003/FootballStarz/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/appsettings.Development.json
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/appsettings.json
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/bundleconfig.json
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/Properties/launchSettings.json
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/WebApplication1.deps.json
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.json
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.dev.json
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/WebApplication1.dll
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/bin/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/obj/Debug/netcoreapp2.0/WebApplication1.dll
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/obj/Debug/netcoreapp2.0/WebApplication1.pdb
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+C:/Users/vanbe/Documents/SRC/C#/ASP.NET/Projects/A007/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/appsettings.Development.json
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/appsettings.json
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/bundleconfig.json
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/Properties/launchSettings.json
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/WebApplication1.deps.json
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.json
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.dev.json
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/WebApplication1.dll
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/bin/Debug/netcoreapp2.0/WebApplication1.pdb
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/obj/Debug/netcoreapp2.0/WebApplication1.dll
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/obj/Debug/netcoreapp2.0/WebApplication1.pdb
+/Users/ericvanberkel.com/OneDrive/Documents/FootballStarz/A007/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.Development.json
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.json
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/bundleconfig.json
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/WebApplication1.deps.json
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.json
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/WebApplication1.runtimeconfig.dev.json
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/WebApplication1.dll
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/bin/Debug/netcoreapp2.0/WebApplication1.pdb
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/obj/Debug/netcoreapp2.0/WebApplication1.dll
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/obj/Debug/netcoreapp2.0/WebApplication1.pdb
+/Volumes/LaCie/Fileserver/Projects/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.Development.json
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.json
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/bundleconfig.json
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.deps.json
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.runtimeconfig.json
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.runtimeconfig.dev.json
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.dll
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.pdb
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.dll
+/Volumes/LaCie/Fileserver/Projects (FS)/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.pdb
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.Development.json
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.json
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/bundleconfig.json
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.deps.json
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.runtimeconfig.json
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.runtimeconfig.dev.json
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.dll
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.pdb
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.dll
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.pdb
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache
+/Users/ericvanberkel.com/Projects/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.csprojAssemblyReference.cache
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.Development.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/appsettings.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/bundleconfig.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.deps.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.runtimeconfig.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.runtimeconfig.dev.json
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.dll
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/bin/Debug/netcoreapp2.0/FootballStarz.pdb
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfoInputs.cache
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.AssemblyInfo.cs
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.csproj.CoreCompileInputs.cache
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.dll
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.pdb
+/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/Debug/netcoreapp2.0/FootballStarz.genruntimeconfig.cache

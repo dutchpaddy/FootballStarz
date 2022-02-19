@@ -1,4 +1,5 @@
-﻿@model Player
+﻿@using FootballStarz.Classes;
+@model Player
 @{
     ViewData["Title"] = "EditPlayer";
 }
@@ -36,7 +37,7 @@
     <div style="padding:10px;">
         @if (Model.PlayerImage != "")
         {
-            <img src="~/images/Player/@Model.PlayerImage" alt="Player" width="200" height="250" />
+            <img src="@Constants.IMG_PREFIX_PLAYER@Model.PlayerImage" alt="Player" width="200" height="250" />
         }
     </div>
 

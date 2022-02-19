@@ -1,31 +1,35 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using FootballStarz.Data;
 using FootballStarz.Models;
 using FootballStarz.ViewModels;
-using SQLitePCL;
+using FootballStarz.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace FootballStarz.Services
 {
     public class PlayerService : IPlayerService
     {
         private AppDbContext _context;
-        public PlayerService(AppDbContext context)
+        private readonly ILogger _logger;
+
+        public PlayerService(ILogger<PlayerService> logger, AppDbContext context)
         {
+            _logger = logger;
             _context = context;
         }
 
         public List<Player> GetAllPlayers()
         {
-            return _context.Players.ToList();
+            var Players = _context.Players.ToList();
+            return Players;
+          
         }
-        public List<Player> GetForeignPlayers()
+
+        public List<Player> GetForeignPlayers( string homeNationality)
         {
             var foreigners = from c in _context.Players             // LINQ!
-                             where c.Nationality != "Netherlands"
+                             where c.Nationality != homeNationality
                              select c;
                 
             return foreigners.ToList();
@@ -33,12 +37,16 @@ namespace FootballStarz.Services
 
         public void AddPlayer(Player player)
         {
+            _logger.LogInformation($"AddPlayer- player: {player.PlayerName}");
+
             _context.Players.Add(player);
             _context.SaveChanges();
         }
 
         public void DeletePlayer(int id)
         {
+            _logger.LogInformation($"DeletePlayer- id: {id}");
+
             Player playerToBeDeleted = GetSinglePlayerById(id);
             _context.Players.Remove(playerToBeDeleted);
             _context.SaveChanges();
@@ -49,6 +57,8 @@ namespace FootballStarz.Services
 
         public void UpdatePlayer(Player newPlayer)
         {
+            _logger.LogInformation($"UpdatePlayer- newPlayer: {newPlayer.PlayerName}");
+
             Player oldPlayer = GetSinglePlayerById(newPlayer.PlayerId);
             oldPlayer.PlayerName = newPlayer.PlayerName;
             oldPlayer.BirthDate = newPlayer.BirthDate;
@@ -60,6 +70,7 @@ namespace FootballStarz.Services
 
         public PlayerViewModel PlayerDeletionConfirmation(int id)
         {
+            _logger.LogInformation($"PlayerDeletionConfirmation- id: {id}");
 
             Player player = GetSinglePlayerById(id);
             PlayerViewModel playerVM = new PlayerViewModel()
@@ -76,6 +87,8 @@ namespace FootballStarz.Services
 
         public PlayerViewModel PlayerDetails(int id)
         {
+            _logger.LogInformation($"PlayerDetails- id: {id}");
+
             Player player = GetSinglePlayerById(id);
             Club club = GetSingleClubById(player.ClubId);
 
@@ -88,7 +101,7 @@ namespace FootballStarz.Services
                 PlayerImage = player.PlayerImage,
                 Club = club
             };
-
+ 
             return clubVM;
 
         }

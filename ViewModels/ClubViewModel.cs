@@ -17,7 +17,10 @@ namespace FootballStarz.ViewModels
         public string ClubLogo { get; set; }
 
         public Stadium Stadium { get; set; }
+
+        public int StadiumId { get; set; }
         
         public List<Player> Players { get; set; }
+    
     }
 }

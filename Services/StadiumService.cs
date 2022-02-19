@@ -1,29 +1,36 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using FootballStarz.Data;
 using FootballStarz.Models;
 using FootballStarz.ViewModels;
+using FootballStarz.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace FootballStarz.Services
 {
     public class StadiumService : IStadiumService
     {
         private AppDbContext _context;
-        public StadiumService(AppDbContext context)
+        private readonly ILogger _logger;
+
+        public StadiumService(ILogger<StadiumService> logger, AppDbContext context)
         {
+            _logger = logger;
             _context = context;
         }
+
         public void AddStadium(Stadium stadium)
         {
+            _logger.LogInformation($"AddStadium- stadium: {stadium.StadiumName}");
+
             _context.Stadiums.Add(stadium);
             _context.SaveChanges();
         }
 
         public void DeleteStadium(int id)
         {
+            _logger.LogInformation($"DeleteStadium- id: {id}");
+
             Stadium stadiumToBeDeleted = GetSingleStadiumById(id);
             _context.Stadiums.Remove(stadiumToBeDeleted);
             _context.SaveChanges();
@@ -43,16 +50,20 @@ namespace FootballStarz.Services
 
         public void UpdateStadium(Stadium newStadium)
         {
+            _logger.LogInformation($"UpdateStadium- newStadium: {newStadium.StadiumName}");
+
             Stadium oldStadium = GetSingleStadiumById(newStadium.StadiumId);
             oldStadium.StadiumName = newStadium.StadiumName;
             oldStadium.BuildDate = newStadium.BuildDate;
             oldStadium.StadiumImage = newStadium.StadiumImage;
             oldStadium.StadiumId = newStadium.StadiumId;
+            oldStadium.ClubId = newStadium.ClubId;
             _context.SaveChanges();
         }
 
         public StadiumViewModel StadiumDeletionConfirmation(int id)
         {
+            _logger.LogInformation($"StadiumDeletionConfirmation- id: {id}");
 
             Stadium stadium = GetSingleStadiumById(id);
             StadiumViewModel stadiumVM = new StadiumViewModel()
@@ -67,6 +78,8 @@ namespace FootballStarz.Services
 
         public StadiumViewModel StadiumDetails(int id)
         {
+            _logger.LogInformation($"StadiumDetails- id: {id}");
+
             Stadium stadium = GetSingleStadiumById(id);
             Club club = GetSingleClubByClubId(stadium.ClubId);
 

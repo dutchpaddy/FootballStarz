@@ -2,17 +2,39 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>FootballStarz</RootNamespace>
+    <AssemblyName>FootballStarz</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'FootballStarz' " />
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="bootstrap" Version="4.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5"><PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+<Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+</PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="3.1.22" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Docs\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="ViewModelServices\" />
+    <Folder Include="VMServiceInterfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Classes\" />
+    <None Remove="Microsoft.Extensions.Logging.AzureAppServices" />
+    <None Remove="Interfaces\" />
+    <None Remove="ViewModelServices\" />
+    <None Remove="ViewInterfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ViewModels\BatchPlayersViewModel.cs" />
+  </ItemGroup>
 </Project>

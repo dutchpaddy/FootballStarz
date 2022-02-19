@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FootballStarz.Data;
 using FootballStarz.Models;
-using FootballStarz.Services;
+using FootballStarz.Interfaces;
+using FootballStarz.VMServiceInterfaces;
 using FootballStarz.ViewModels;
-
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace FootballStarz.Controllers
 {
@@ -17,24 +16,56 @@ namespace FootballStarz.Controllers
     public class ClubController : Controller
     {
 
+        private IHostingEnvironment _HostingEnv;
+        private IConfiguration _configuration;
+        private readonly ILogger _logger;
+
+        private IClubViewModelService _clubViewModelService;
         private IClubService _ClubService;
         private IPlayerService _PlayerService;
         private IStadiumService _StadiumService;
-        public ClubController(IClubService ClubService, IPlayerService PlayerService, IStadiumService StadiumService)
+
+        public ClubController(IConfiguration configuration,
+                                IHostingEnvironment HostingEnvironment,
+                                ILogger<ClubController> logger,
+                                IClubViewModelService clubViewModelService,
+                                IClubService ClubService,
+                                IPlayerService PlayerService,
+                                IStadiumService StadiumService )
         {
+            _configuration = configuration;
+            _HostingEnv = HostingEnvironment;
+            _logger = logger;
+
+            _clubViewModelService = clubViewModelService;
             _ClubService = ClubService;
             _PlayerService = PlayerService;
             _StadiumService = StadiumService;
         }
-        [AllowAnonymous]
-        public IActionResult AllClubs()
+
+        public IActionResult AllClubs(LoginViewModel LoginVM)
         {
-            return View(_ClubService.GetAllClubs());
+            ViewData["ClubMessage"] = "All Clubs are shown here:";
+
+            return View(_clubViewModelService.GetClubs());
         }
+
         public IActionResult CreateClub()
         {
-            ViewBag.Stadiums = _StadiumService.GetAllStadiums();
-            return View();
+            ViewBag.Stadiums = _ClubService.GetAllStadiums();
+
+            var ClubVM = new ClubViewModel
+            {
+                ClubId = 0,
+                ClubName = "",
+                Founded = new DateTime(),
+                ClubLogo = "",
+                StadiumId = 0,
+                Stadium = new Stadium(),
+                Players = new List<Player>()
+            };
+
+            return View(ClubVM);
         }
 
         public IActionResult ClubCreated(Club Club)
@@ -45,15 +76,23 @@ namespace FootballStarz.Controllers
                 ModelState.AddModelError("", "Something went wrong!");
                 return View("CreateClub");
             }
+
+            _logger.LogInformation("ClubController- Model state VALID");
+
             _ClubService.AddClub(Club);
-            return View();
+
+            _logger.LogInformation("ClubController- Club succesfully created.");
+
+
+            return RedirectToAction("AllClubs");
         }
 
 
-        public IActionResult EditClub(int id)
+        public IActionResult EditClub(int Id)
         {
             ViewBag.Stadiums = _StadiumService.GetAllStadiums();
-            return View(_ClubService.GetSingleClubById(id));
+
+            return View(_ClubService.GetSingleClubById(Id));
         }
 
 
@@ -65,9 +104,15 @@ namespace FootballStarz.Controllers
                 ModelState.AddModelError("", "Something went wrong!");
                 return View("EditClub", newClub);
             }
+
+            _logger.LogInformation("ClubController- Model state VALID");
+
             _ClubService.UpdateClub(newClub);
 
-            return View();
+            _logger.LogInformation("ClubController- Club succesfully updated.");
+
+
+           return RedirectToAction("AllClubs");
 
         }
 
@@ -76,21 +121,36 @@ namespace FootballStarz.Controllers
 
         public IActionResult ClubDeleted(int id)
         {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Something went wrong!");
+
+                return View("EditClub", _ClubService.GetSingleClubById(id));
+            }
+
+            _logger.LogInformation("ClubController- Model state VALID");
+
             _ClubService.DeleteClub(id);
-            return View();
+
+            _logger.LogInformation("ClubController- Club succesfully deleted.");
+
+
+            return RedirectToAction("AllClubs");
         }
 
         public IActionResult ClubDetails(int id)
         {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Something went wrong!");
 
-            return View(_ClubService.ClubDetails(id));
-        }
+                return View("EditClub", _ClubService.GetSingleClubById(id));
+            }
 
-        [Route("/search/{name}")]
-        public IActionResult Search(string name)
-        {
-            string searchName = name;
-            return View();
+            _logger.LogInformation("ClubController- Model state VALID; Club succesfully displayed.");
+
+            return View(_clubViewModelService.GetClubDetails(id));
+
         }
     }
 }

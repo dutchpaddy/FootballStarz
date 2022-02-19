@@ -1,7 +1,9 @@
-﻿@model StadiumViewModel
-@{
-    ViewData["Title"] = "StadiumDetails";
-}
+﻿@using Microsoft.AspNetCore.Identity;
+@using FootballStarz.Classes;
+@model StadiumViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{ ViewData["Title"] = "StadiumDetails"; }
 
 <h1>@Model.StadiumName</h1>
 <table class="table table-striped">
@@ -25,10 +27,20 @@
     </thead>
 </table>
 
+@if (SignInManager.IsSignedIn(User))
+{
+<table>
+    <td>@Html.ActionLink("Edit " + @Model.StadiumName, "EditStadium", "Stadium", new { @Id = @Model.StadiumId })</td>
+    <td>&nbsp;|&nbsp;</td>
+    <td>@Html.ActionLink("Delete " + @Model.StadiumName, "DeleteStadium", "Stadium", new { @Id = @Model.StadiumId })</td>
+</table>
+}
+
+<br />
+
 <div style="padding:10px;">
     @if (Model.StadiumImage != "")
     {
-        <img src="~/images/Stadium/@Model.StadiumImage" alt="Stadium" width="250" height="200" />
+    <img src="@Constants.IMG_PREFIX_STADIUM@Model.StadiumImage" alt="Stadium" width="250" height="200" />
     }
 </div>
-

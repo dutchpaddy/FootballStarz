@@ -1,4 +1,5 @@
-﻿@model Club
+﻿@using FootballStarz.Classes;
+@model Club
 @{
     ViewData["Title"] = "EditClub";
 }
@@ -27,7 +28,7 @@
     <div style="padding:10px;">
         @if (Model.ClubLogo != "")
         {
-            <img src="~/images/Logos/@Model.ClubLogo" alt="Club Logo" width="200" height="200" />
+            <img src="@Constants.IMG_PREFIX_CLUBLOGO@Model.ClubLogo" alt="Club Logo" width="200" height="200" />
         }
     </div>
 
