@@ -4,14 +4,13 @@ using FootballStarz.Data;
 using FootballStarz.Models;
 using FootballStarz.Interfaces;
 using FootballStarz.ViewModels;
-using FootballStarz.VMServiceInterfaces;
 
 namespace FootballStarz.ViewModelServices
 {
     public class StadiumViewModelService : IStadiumViewModelService
     {
-        private AppDbContext _dbContext;
-        private IStadiumService _stadiumService;
+        private readonly AppDbContext _dbContext;
+        private readonly IStadiumService _stadiumService;
 
         public StadiumViewModelService(AppDbContext dbContext, IStadiumService stadiumService )
         {

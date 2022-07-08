@@ -10,7 +10,7 @@ namespace FootballStarz.Services
 {
     public class StadiumService : IStadiumService
     {
-        private AppDbContext _context;
+        private readonly AppDbContext _context;
         private readonly ILogger _logger;
 
         public StadiumService(ILogger<StadiumService> logger, AppDbContext context)

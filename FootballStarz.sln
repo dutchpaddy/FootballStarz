@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballStarz", "FootballStarz.csproj", "{A0DA2746-DC15-45C2-836B-8946C94CEBAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FBSBlobManager", "C:\Users\ericvanberkel.com\OneDrive - Autotelex BV\Documents\LocalProjects\FBSBlobManager\FBSBlobManager\FBSBlobManager.csproj", "{39167BAE-FCAB-46A5-B3F0-47B160CB9128}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FBSBlobWeb", "C:\Users\ericvanberkel.com\OneDrive - Autotelex BV\Documents\LocalProjects\FBSBlobManager\FSBlobTestWeb\FBSBlobWeb.csproj", "{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A0DA2746-DC15-45C2-836B-8946C94CEBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0DA2746-DC15-45C2-836B-8946C94CEBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0DA2746-DC15-45C2-836B-8946C94CEBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39167BAE-FCAB-46A5-B3F0-47B160CB9128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39167BAE-FCAB-46A5-B3F0-47B160CB9128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39167BAE-FCAB-46A5-B3F0-47B160CB9128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39167BAE-FCAB-46A5-B3F0-47B160CB9128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

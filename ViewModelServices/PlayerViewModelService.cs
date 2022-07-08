@@ -1,5 +1,4 @@
 ﻿using FootballStarz.Interfaces;
-using FootballStarz.VMServiceInterfaces;
 using FootballStarz.ViewModels;
 using FootballStarz.Data;
 using System.Collections.Generic;
@@ -9,8 +8,8 @@ namespace FootballStarz.ViewModelServices
 {
     public class PlayerViewModelService : IPlayerViewModelService
     {
-        private  AppDbContext _dbcontext;
-        private  IPlayerService _playerService;
+        private readonly AppDbContext _dbcontext;
+        private readonly IPlayerService _playerService;
 
         public PlayerViewModelService(AppDbContext context, IPlayerService playerService)
         {

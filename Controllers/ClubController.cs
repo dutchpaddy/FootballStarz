@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using FootballStarz.Models;
 using FootballStarz.Interfaces;
-using FootballStarz.VMServiceInterfaces;
 using FootballStarz.ViewModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
@@ -16,14 +15,14 @@ namespace FootballStarz.Controllers
     public class ClubController : Controller
     {
 
-        private IHostingEnvironment _HostingEnv;
-        private IConfiguration _configuration;
+        private readonly IHostingEnvironment _HostingEnv;
+        private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
-        private IClubViewModelService _clubViewModelService;
-        private IClubService _ClubService;
-        private IPlayerService _PlayerService;
-        private IStadiumService _StadiumService;
+        private readonly IClubViewModelService _clubViewModelService;
+        private readonly IClubService _ClubService;
+        private readonly IPlayerService _PlayerService;
+        private readonly IStadiumService _StadiumService;
 
         public ClubController(IConfiguration configuration,
                                 IHostingEnvironment HostingEnvironment,
@@ -43,7 +42,8 @@ namespace FootballStarz.Controllers
             _StadiumService = StadiumService;
         }
 
-        public IActionResult AllClubs(LoginViewModel LoginVM)
+ //       public IActionResult AllClubs(LoginViewModel LoginVM)
+        public IActionResult AllClubs()
         {
             ViewData["ClubMessage"] = "All Clubs are shown here:";
 

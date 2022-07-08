@@ -12,8 +12,8 @@ namespace FootballStarz.Controllers
 {
     public class AccountController : Controller
     {
-        private IHostingEnvironment _HostingEnv;
-        private IConfiguration _configuration;
+        private readonly IHostingEnvironment _HostingEnv;
+        private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
         private readonly SignInManager<ApplicationUser> _signInManager;

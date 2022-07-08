@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/FootballStarz.csproj": {}
+    "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj": {}
   },
   "projects": {
-    "/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/FootballStarz.csproj": {
+    "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/FootballStarz.csproj",
+        "projectUniqueName": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
         "projectName": "FootballStarz",
-        "projectPath": "/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/FootballStarz.csproj",
-        "packagesPath": "/Users/ericvanberkel.com/.nuget/packages/",
-        "outputPath": "/Users/ericvanberkel.com/Projects (Local)/ASP.NET_CORE_MVC/FootballStarz/I007/obj/",
+        "projectPath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
+        "packagesPath": "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\",
+        "outputPath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/ericvanberkel.com/.config/NuGet/NuGet.Config"
+          "C:\\Users\\ericvanberkel.com\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.0": {
-            "targetAlias": "netcoreapp2.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,26 +37,32 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.0": {
-          "targetAlias": "netcoreapp2.0",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.AspNetCore.All": {
+            "Azure.Storage.Blobs": {
               "target": "Package",
-              "version": "[2.0.5, )"
+              "version": "[12.11.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.23, )"
             },
             "Microsoft.Extensions.Logging.AzureAppServices": {
               "target": "Package",
               "version": "[3.1.22, )"
             },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
+            "Microsoft.VisualStudio.Web.BrowserLink": {
               "target": "Package",
-              "version": "[2.0.0, )",
-              "autoReferenced": true
+              "version": "[2.2.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[3.1.5, )"
             },
             "bootstrap": {
               "target": "Package",
@@ -74,7 +79,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

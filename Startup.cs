@@ -9,9 +9,10 @@ using FootballStarz.Services;
 using Microsoft.AspNetCore.Identity;
 using FootballStarz.Models;
 using FootballStarz.Interfaces;
-using FootballStarz.VMServiceInterfaces;
 using Microsoft.Extensions.Logging;
 using FootballStarz.ViewModelServices;
+using Microsoft.AspNetCore.Mvc;
+using FootballStarz.Classes;
 
 namespace FootballStarz
 {
@@ -29,12 +30,13 @@ namespace FootballStarz
         {
             var _connection = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<AppDbContext>(options => 
-            options.UseSqlServer(_connection));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_connection));
 
             services.AddTransient<IClubService, ClubService>();                         // Services
             services.AddTransient<IStadiumService, StadiumService>();
             services.AddTransient<IPlayerService, PlayerService>();
+
+            services.AddTransient<FBSContainerService>();                               // Azure FBS Blob service
 
             services.AddTransient<IPlayerViewModelService, PlayerViewModelService>();   // ViewModel Services
             services.AddTransient<IClubViewModelService, ClubViewModelService>();
@@ -55,14 +57,13 @@ namespace FootballStarz
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
                 options.Lockout.MaxFailedAccessAttempts = 10;
             });
-            services.ConfigureApplicationCookie(options => 
-            {
-                options.Cookie.HttpOnly = true;
-                options.Cookie.Expiration = TimeSpan.FromDays(5);
-                options.LoginPath = "/Account/Login";
-            });
+ 
+            services
+                .AddControllersWithViews()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddMvc();
+            services.AddMvc(options =>
+                options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -101,7 +102,14 @@ namespace FootballStarz
 
             _Logger.LogInformation(System.DateTime.Now.ToString() + "Calling: app.UseMvc();");
 
-            app.UseMvc(routes =>
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+              _Logger.LogInformation(System.DateTime.Now.ToString() + "Calling: UseEndpoints();");
+
+            app.UseMvc(routes =>                  // old 2.1 stuff,
+                                                  // requires services.AddMvc(options => options.EnableEndPointRouting = false) to be set.
             {
                 routes.MapRoute(
                     name: "default",

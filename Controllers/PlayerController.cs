@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FootballStarz.Models;
-using FootballStarz.ViewModels;
 using FootballStarz.Interfaces;
-using FootballStarz.VMServiceInterfaces;
 using FootballStarz.Classes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -16,13 +14,13 @@ namespace FootballStarz.Controllers
     public class PlayerController : Controller
     {
 
-        private IHostingEnvironment _HostingEnv;
-        private IConfiguration _configuration;
+        private readonly IHostingEnvironment _HostingEnv;
+        private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
-        private IPlayerService _PlayerService;
-        private IClubService _ClubService;
-        private IPlayerViewModelService _playerViewModelService;
+        private readonly IPlayerService _PlayerService;
+        private readonly IClubService _ClubService;
+        private readonly IPlayerViewModelService _playerViewModelService;
 
         public PlayerController(IConfiguration configuration,
                                 IHostingEnvironment HostingEnvironment,
@@ -135,13 +133,6 @@ namespace FootballStarz.Controllers
 
             //return View(_PlayerService.PlayerDetails(id));
             return View(_playerViewModelService.GetPlayerByPlayerId(id));
-        }
-
-        [Route("/search/{name}")]
-        public IActionResult Search(string name)
-        {
-            string searchName = name;
-            return View();
         }
     }
 }

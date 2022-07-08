@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using FootballStarz.Data;
 using FootballStarz.Interfaces;
-using FootballStarz.VMServiceInterfaces;
 using FootballStarz.Models;
 using FootballStarz.ViewModels;
 
@@ -10,8 +9,8 @@ namespace FootballStarz.ViewModelServices
 {
     public class ClubViewModelService : IClubViewModelService
     {
-        AppDbContext _dbcontext;
-        IClubService _clubservice;
+        private readonly AppDbContext _dbcontext;
+        private readonly IClubService _clubservice;
 
         public ClubViewModelService(
             AppDbContext dbcontext,

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FootballStarz.Models;
 using FootballStarz.Interfaces;
-using FootballStarz.VMServiceInterfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -13,14 +12,14 @@ namespace FootballStarz.Controllers
     public class StadiumController : Controller
     {
 
-        private IHostingEnvironment _HostingEnv;
-        private IConfiguration _configuration;
+        private readonly IHostingEnvironment _HostingEnv;
+        private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
-        private IStadiumService _StadiumService;
-        private IClubService _clubService;
+        private readonly IStadiumService _StadiumService;
+        private readonly IClubService _clubService;
 
-        private IStadiumViewModelService _stadiumViewModelService;
+        private readonly IStadiumViewModelService _stadiumViewModelService;
 
         public StadiumController(IConfiguration configuration,
                                 IHostingEnvironment HostingEnvironment,

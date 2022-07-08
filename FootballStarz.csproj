@@ -1,18 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>FootballStarz</RootNamespace>
     <AssemblyName>FootballStarz</AssemblyName>
   </PropertyGroup>
 
+<PropertyGroup>
+  <Nullable>enable</Nullable>
+  <LangVersion>8.0</LangVersion>
+</PropertyGroup>
+
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'FootballStarz' " />
   <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.11.0" />
     <PackageReference Include="bootstrap" Version="4.5.2" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5"><PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
-<Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
-</PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.23" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="3.1.22" />
   </ItemGroup>
 
@@ -22,10 +28,7 @@
 
   <ItemGroup>
     <Folder Include="Docs\" />
-    <Folder Include="Classes\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="ViewModelServices\" />
-    <Folder Include="VMServiceInterfaces\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Classes\" />

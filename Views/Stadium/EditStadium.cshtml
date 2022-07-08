@@ -1,4 +1,6 @@
 ﻿@using FootballStarz.Classes;
+@using FootballStarz.Services;
+@inject FBSContainerService fbsrv
 @model Stadium
 @{
     ViewData["Title"] = "EditStadium";
@@ -34,12 +36,19 @@
     </div>
 
     <div style="padding:10px;">
-        @if (Model.StadiumImage != "")
+        @if (! Model.StadiumImage.Equals("0"))
         {
-            <img src="@Constants.IMG_PREFIX_STADIUM@Model.StadiumImage" alt="Stadium"width="250" height="200" />
+             var Url = fbsrv.GetCachedImageUrl(Model.StadiumImage);
+             var t = Url;
+
+            <img src="@Url" alt="not displayed" width="337" height="150"></img>
+
+        }
+        else
+        {
+             <h3>No Image Available</h3>
         }
     </div>
-
      <div class="form-group">
         @Html.LabelFor(n => n.ClubId)
         @Html.DropDownListFor(n => n.ClubId, new SelectList(ViewBag.Clubs, "ClubId", "ClubName"), "Played by club ", new { @class = "form-control" })

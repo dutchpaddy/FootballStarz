@@ -1,7 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using FootballStarz.Classes;
+@using FootballStarz.Services;
 @model ClubViewModel
 @inject SignInManager<ApplicationUser> SignInManager
+@inject FBSContainerService fbsrv
 
 @{ ViewData["Title"] = "ClubDetails"; }
 
@@ -29,40 +31,50 @@
     <td>@Html.ActionLink("Edit " + @Model.ClubName, "EditClub", "Club", new { @Id = @Model.ClubId })</td>
     <td>&nbsp;|&nbsp;</td>
     <td>@Html.ActionLink("Delete " + @Model.ClubName, "DeleteClub", "Club", new { @Id = @Model.ClubId })</td>
-</table>}
+</table>
+}
 
 <br />
 <div style="padding:10px;">
-    @if (Model.ClubLogo != "")
+    @if (! Model.ClubLogo.Equals(""))
     {
-<img src="@Constants.IMG_PREFIX_CLUBLOGO@Model.ClubLogo" alt="Club Logo" width="200" height="200" />}
+        var Url = await fbsrv.GetCachedImageUrl(Model.ClubLogo);
+        var t = Url;
 
-    <div class="text-left">
-        <h3>These are the players that have a contract with club: <b>@Model.ClubName</b></h3>
-    </div>
-    <hr />
-
-    @if (Model.Players.Count() == 0)
+        <img src="@Url" alt="not displayed" width="225" height="225"></img>
+    }
+    else
     {
+          <h3>No Image Available</h3>
+    }
+</div>
+<div class="text-left">
+    <h3>These are the players that have a contract with club: <b>@Model.ClubName</b></h3>
+</div>
+<hr />
+
+@if (Model.Players.Count() == 0)
+{
 <h2 class="alert-info">
     There are no players with this club.
-</h2> }
-            else
-            {
+</h2>
+}
+else
+{
 <table class="table table-striped">
-    <thead>
+<thead>
     <th>Player Name</th>
     <th>Date of Birth</th>
     <th>Nationality</th>
-    </thead>
-    <tbody>
-        @foreach (Player dfk in Model.Players)
-        {
-<tr>
-    <td>@dfk.PlayerName</td>
-    <td>@dfk.BirthDate.ToString("dd-MM-yyyy")</td>
-    <td>@dfk.Nationality</td>
-</tr>}
-    </tbody>
+</thead>
+<tbody>
+    @foreach (Player dfk in Model.Players)
+    {
+    <tr>
+        <td>@dfk.PlayerName</td>
+        <td>@dfk.BirthDate.ToString("dd-MM-yyyy")</td>
+        <td>@dfk.Nationality</td>
+    </tr>}
+</tbody>
 
 </table>}
