@@ -12,7 +12,7 @@ namespace FootballStarz.Models
         [Display(Name = "Stadium Name")]
         [DataType(DataType.Text)]
 
-        public string StadiumName { get; set; }
+        public string? StadiumName { get; set; }
 
         [Required(ErrorMessage = "Date built required.")]
         [Display(Name = "Date Built")]
@@ -23,13 +23,13 @@ namespace FootballStarz.Models
         [Display(Name = "Location")]
         [DataType(DataType.Text)]
 
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
         [Required(ErrorMessage = "Stadium Image required.")]
         [DataType(DataType.Text)]
         [Display(Name = "Stadium Image")]
 
-        public string StadiumImage { get; set; }
+        public string? StadiumImage { get; set; }
 
         [Required(ErrorMessage = "Club required.")] 
         public int ClubId { get; set; }

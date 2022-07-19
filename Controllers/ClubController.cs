@@ -15,7 +15,7 @@ namespace FootballStarz.Controllers
     public class ClubController : Controller
     {
 
-        private readonly IHostingEnvironment _HostingEnv;
+        private readonly IWebHostEnvironment _HostingEnv;
         private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
@@ -25,7 +25,7 @@ namespace FootballStarz.Controllers
         private readonly IStadiumService _StadiumService;
 
         public ClubController(IConfiguration configuration,
-                                IHostingEnvironment HostingEnvironment,
+                                IWebHostEnvironment HostingEnvironment,
                                 ILogger<ClubController> logger,
                                 IClubViewModelService clubViewModelService,
                                 IClubService ClubService,

@@ -8,7 +8,7 @@ namespace FootballStarz.Services
 {
     public class FBSContainerService : IFBSContainerService                 // service against a cached blob property List
     {                                                                       // actual image blobs rendered thru Azure URL
-        private readonly List<FBSBlob> blobCache = new List<FBSBlob>();
+        //private readonly List<FBSBlob> blobCache = new List<FBSBlob>();
 
  
         public async Task<String> GetCachedImageUrl( String Image  )

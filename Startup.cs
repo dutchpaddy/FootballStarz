@@ -12,7 +12,6 @@ using FootballStarz.Interfaces;
 using Microsoft.Extensions.Logging;
 using FootballStarz.ViewModelServices;
 using Microsoft.AspNetCore.Mvc;
-using FootballStarz.Classes;
 
 namespace FootballStarz
 {
@@ -35,6 +34,7 @@ namespace FootballStarz
             services.AddTransient<IClubService, ClubService>();                         // Services
             services.AddTransient<IStadiumService, StadiumService>();
             services.AddTransient<IPlayerService, PlayerService>();
+            services.AddTransient<ILigaService, LigaService>();
 
             services.AddTransient<FBSContainerService>();                               // Azure FBS Blob service
 

@@ -9,15 +9,18 @@ namespace FootballStarz.ViewModelServices
 {
     public class ClubViewModelService : IClubViewModelService
     {
-        private readonly AppDbContext _dbcontext;
+        //private readonly AppDbContext _dbcontext;
         private readonly IClubService _clubservice;
+        private readonly ILigaService _ligaService;
 
         public ClubViewModelService(
-            AppDbContext dbcontext,
-            IClubService clubService)
+            //AppDbContext dbcontext,
+            IClubService clubService,
+            ILigaService ligaService)
         {
-            _dbcontext = dbcontext;
+            //_dbcontext = dbcontext;
             _clubservice = clubService;
+            _ligaService = ligaService;
         }
 
         public List<ClubViewModel> GetClubs()
@@ -50,7 +53,8 @@ namespace FootballStarz.ViewModelServices
 //            _logger.LogInformation($"ClubDetails- id: {id}");
 
             Club club = _clubservice.GetSingleClubById(clubId);
-            Stadium stadium = _clubservice.GetStadiumByStadiumId(club.StadiumId);
+            Liga liga = _ligaService.GetSingleLigaById(club.Liga);
+            Stadium? stadium = _clubservice.GetStadiumByStadiumId(club.StadiumId);
             List<Player> players = _clubservice.GetPlayersByClubId(club.ClubId);
 
             ClubViewModel clubVM = new ClubViewModel()
@@ -59,8 +63,12 @@ namespace FootballStarz.ViewModelServices
                 ClubName = club.ClubName,
                 Founded = club.Founded,
                 ClubLogo = club.ClubLogo,
+                LastUpdated = club.TouchStamp,
                 Stadium = stadium,
-                Players = players
+                Players = players,
+                LigaName = liga.Name,
+                Season = liga.Season,
+                Country = liga.IsoCountryCode  // for the time being
             };
 
             return clubVM;

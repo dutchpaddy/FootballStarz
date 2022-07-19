@@ -8,12 +8,10 @@ namespace FootballStarz.ViewModelServices
 {
     public class PlayerViewModelService : IPlayerViewModelService
     {
-        private readonly AppDbContext _dbcontext;
         private readonly IPlayerService _playerService;
 
-        public PlayerViewModelService(AppDbContext context, IPlayerService playerService)
+        public PlayerViewModelService(IPlayerService playerService)
         {
-            _dbcontext = context;
             _playerService = playerService;
         }
 

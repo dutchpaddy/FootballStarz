@@ -12,22 +12,22 @@ namespace FootballStarz.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IHostingEnvironment _HostingEnv;
-        private readonly IConfiguration _configuration;
+        //private readonly IWebHostEnvironment _HostingEnv;
+        //private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
 
 
-        public AccountController(IConfiguration configuration,
-                                IHostingEnvironment HostingEnvironment,
+        public AccountController(//IConfiguration configuration,
+                                //IWebHostEnvironment HostingEnvironment,
                                 ILogger<AccountController> logger,
                                 UserManager<ApplicationUser> userManager,
                                 SignInManager<ApplicationUser> signInManager)
         {
-            _configuration = configuration;
-            _HostingEnv = HostingEnvironment;
+            //_configuration = configuration;
+            //_HostingEnv = HostingEnvironment;
             _logger = logger;
 
             _userManager = userManager;

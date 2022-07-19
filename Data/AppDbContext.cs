@@ -14,5 +14,6 @@ namespace FootballStarz.Data
         public DbSet<Club> Clubs { get; set; }
         public DbSet<Stadium> Stadiums { get; set; }
         public DbSet<Player> Players { get; set; }
+        public DbSet<Liga> Ligas { get; set; }
     }
 }
