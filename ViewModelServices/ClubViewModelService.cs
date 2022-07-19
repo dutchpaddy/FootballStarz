@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FootballStarz.Classes;
 using FootballStarz.Data;
 using FootballStarz.Interfaces;
 using FootballStarz.Models;
@@ -9,16 +10,13 @@ namespace FootballStarz.ViewModelServices
 {
     public class ClubViewModelService : IClubViewModelService
     {
-        //private readonly AppDbContext _dbcontext;
         private readonly IClubService _clubservice;
         private readonly ILigaService _ligaService;
 
         public ClubViewModelService(
-            //AppDbContext dbcontext,
             IClubService clubService,
             ILigaService ligaService)
         {
-            //_dbcontext = dbcontext;
             _clubservice = clubService;
             _ligaService = ligaService;
         }
@@ -29,7 +27,7 @@ namespace FootballStarz.ViewModelServices
 
             var Clubs = _clubservice.GetAllClubs();
 
-            foreach( Club club in Clubs)
+            foreach ( Club club in Clubs)
             {
                 cvm.Add
                     (new ClubViewModel

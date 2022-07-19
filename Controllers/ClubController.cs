@@ -42,12 +42,12 @@ namespace FootballStarz.Controllers
             _StadiumService = StadiumService;
         }
 
- //       public IActionResult AllClubs(LoginViewModel LoginVM)
         public IActionResult AllClubs()
         {
             ViewData["ClubMessage"] = "All Clubs are shown here:";
 
             return View(_clubViewModelService.GetClubs());
+
         }
 
         public IActionResult CreateClub()

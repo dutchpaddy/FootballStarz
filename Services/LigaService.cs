@@ -12,11 +12,10 @@ namespace FootballStarz.Services
     public class LigaService : ILigaService
     {
         private readonly AppDbContext _context;
-        //private readonly ILogger _logger;
 
-        public LigaService(/*ILogger<ClubService> logger, */ AppDbContext context)
+
+        public LigaService(AppDbContext context)
         {
-        //    _logger = logger;
             _context = context;
         }
 

@@ -3,6 +3,7 @@ using FootballStarz.ViewModels;
 using FootballStarz.Data;
 using System.Collections.Generic;
 using FootballStarz.Models;
+using FootballStarz.Classes;
 
 namespace FootballStarz.ViewModelServices
 {
@@ -40,6 +41,7 @@ namespace FootballStarz.ViewModelServices
 
             var players = _playerService.GetAllPlayers();
 
+  
             foreach(Player player in players)
             {
                 pvm.Add(
