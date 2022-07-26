@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj": {}
+    "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj": {}
   },
   "projects": {
-    "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj": {
+    "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
+        "projectUniqueName": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj",
         "projectName": "FootballStarz",
-        "projectPath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
+        "projectPath": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj",
         "packagesPath": "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\",
-        "outputPath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\obj\\",
+        "outputPath": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ericvanberkel.com\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,7 +42,7 @@
           "dependencies": {
             "Azure.Storage.Blobs": {
               "target": "Package",
-              "version": "[12.11.0, )"
+              "version": "[12.13.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",

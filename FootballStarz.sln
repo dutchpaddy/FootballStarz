@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FBSBlobManager", "C:\Users\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FBSBlobWeb", "C:\Users\ericvanberkel.com\OneDrive - Autotelex BV\Documents\LocalProjects\FBSBlobManager\FSBlobTestWeb\FBSBlobWeb.csproj", "{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBSExcelDataLoader", "..\FBSExcelDataLoader\FBSExcelDataLoader.csproj", "{9F5F2A28-958D-4117-95C7-06F3E24CF5B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBSInputConverter", "..\FBSInputConverter\FBSInputConverter.csproj", "{C07CCB63-722D-486D-9AC0-943A43ADB91C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{945F3A5F-42EA-4512-BB8E-DBB65442B6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5F2A28-958D-4117-95C7-06F3E24CF5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5F2A28-958D-4117-95C7-06F3E24CF5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5F2A28-958D-4117-95C7-06F3E24CF5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5F2A28-958D-4117-95C7-06F3E24CF5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C07CCB63-722D-486D-9AC0-943A43ADB91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C07CCB63-722D-486D-9AC0-943A43ADB91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C07CCB63-722D-486D-9AC0-943A43ADB91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C07CCB63-722D-486D-9AC0-943A43ADB91C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

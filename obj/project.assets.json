@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Azure.Core/1.22.0": {
+      "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -20,23 +20,23 @@
           "lib/netcoreapp2.1/Azure.Core.dll": {}
         }
       },
-      "Azure.Storage.Blobs/12.11.0": {
+      "Azure.Storage.Blobs/12.13.0": {
         "type": "package",
         "dependencies": {
-          "Azure.Storage.Common": "12.10.0",
+          "Azure.Storage.Common": "12.12.0",
           "System.Text.Json": "4.7.2"
         },
         "compile": {
-          "lib/netstandard2.0/Azure.Storage.Blobs.dll": {}
+          "lib/netstandard2.1/Azure.Storage.Blobs.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Azure.Storage.Blobs.dll": {}
+          "lib/netstandard2.1/Azure.Storage.Blobs.dll": {}
         }
       },
-      "Azure.Storage.Common/12.10.0": {
+      "Azure.Storage.Common/12.12.0": {
         "type": "package",
         "dependencies": {
-          "Azure.Core": "1.22.0",
+          "Azure.Core": "1.25.0",
           "System.IO.Hashing": "6.0.0"
         },
         "compile": {
@@ -3047,16 +3047,16 @@
     }
   },
   "libraries": {
-    "Azure.Core/1.22.0": {
-      "sha512": "ze/xRCHSSDe5TIk5vBDbVrauW1EN7UIbnBvIBfMH8KSt/I9+/7yPAjTBDgNBk0IwG6WBV+BBHp4IUtS/PGAQwQ==",
+    "Azure.Core/1.25.0": {
+      "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
-      "path": "azure.core/1.22.0",
+      "path": "azure.core/1.25.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.core.1.22.0.nupkg.sha512",
+        "azure.core.1.25.0.nupkg.sha512",
         "azure.core.nuspec",
         "azureicon.png",
         "lib/net461/Azure.Core.dll",
@@ -3069,32 +3069,34 @@
         "lib/netstandard2.0/Azure.Core.xml"
       ]
     },
-    "Azure.Storage.Blobs/12.11.0": {
-      "sha512": "50eRjIhY7Q1JN7kT2MSawDKCcwSb7uRZUkz00P/BLjSg47gm2hxUYsnJPyvzCHntYMbOWzrvaVQTwYwXabaR5Q==",
+    "Azure.Storage.Blobs/12.13.0": {
+      "sha512": "h5ZxRwmS/U1NOFwd+MuHJe4To1hEPu/yeBIKS1cbAHTDc+7RBZEjPf1VFeUZsIIuHvU/AzXtcRaph9BHuPRNMQ==",
       "type": "package",
-      "path": "azure.storage.blobs/12.11.0",
+      "path": "azure.storage.blobs/12.13.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.storage.blobs.12.11.0.nupkg.sha512",
+        "azure.storage.blobs.12.13.0.nupkg.sha512",
         "azure.storage.blobs.nuspec",
         "azureicon.png",
         "lib/netstandard2.0/Azure.Storage.Blobs.dll",
-        "lib/netstandard2.0/Azure.Storage.Blobs.xml"
+        "lib/netstandard2.0/Azure.Storage.Blobs.xml",
+        "lib/netstandard2.1/Azure.Storage.Blobs.dll",
+        "lib/netstandard2.1/Azure.Storage.Blobs.xml"
       ]
     },
-    "Azure.Storage.Common/12.10.0": {
-      "sha512": "vYkHGzUkdZTace/cDPZLG+Mh/EoPqQuGxDIBOau9D+XWoDPmuUFGk325aXplkFE4JFGpSwoytNYzk/qBCaiHqg==",
+    "Azure.Storage.Common/12.12.0": {
+      "sha512": "Ms0XsZ/D9Pcudfbqj+rWeCkhx/ITEq8isY0jkor9JFmDAEHsItFa2XrWkzP3vmJU6EsXQrk4snH63HkW/Jksvg==",
       "type": "package",
-      "path": "azure.storage.common/12.10.0",
+      "path": "azure.storage.common/12.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.storage.common.12.10.0.nupkg.sha512",
+        "azure.storage.common.12.12.0.nupkg.sha512",
         "azure.storage.common.nuspec",
         "azureicon.png",
         "lib/netstandard2.0/Azure.Storage.Common.dll",
@@ -9638,7 +9640,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Azure.Storage.Blobs >= 12.11.0",
+      "Azure.Storage.Blobs >= 12.13.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.23",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.23",
       "Microsoft.Extensions.Logging.AzureAppServices >= 3.1.22",
@@ -9653,11 +9655,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
+      "projectUniqueName": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj",
       "projectName": "FootballStarz",
-      "projectPath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
+      "projectPath": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj",
       "packagesPath": "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\",
-      "outputPath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\obj\\",
+      "outputPath": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ericvanberkel.com\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9688,7 +9690,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": {
             "target": "Package",
-            "version": "[12.11.0, )"
+            "version": "[12.13.0, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",

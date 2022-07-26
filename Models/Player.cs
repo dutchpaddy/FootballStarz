@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using FootballStarz.Validator;
 
 namespace FootballStarz.Models
 {
@@ -16,7 +12,7 @@ namespace FootballStarz.Models
         [Display(Name = "Player name")]
         [DataType(DataType.Text)]
 
-        public string PlayerName { get; set; }
+        public string? PlayerName { get; set; }
 
         [Required(ErrorMessage = "Birthdate required.")]
         [Display(Name = "Birth Date")]
@@ -28,14 +24,14 @@ namespace FootballStarz.Models
         [Display(Name = "Nationality")]
         [DataType(DataType.Text)]
 
-        public string Nationality { get; set; }
+        public string? Nationality { get; set; }
 
         [Required(ErrorMessage = "Player image required.")]
         [Display(Name = "Player Image")]
         [DataType(DataType.Text)]
         //[PlayerImageValidation]
 
-        public string PlayerImage { get; set; }
+        public string? PlayerImage { get; set; }
 
         // Relations
         [Required(ErrorMessage = "Club required..")]

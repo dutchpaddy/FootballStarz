@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "wb5W5Wv1zr9ankofCGVD47PzZFtAcNHNfDrwOI9JsVwglo8OWrfhQOMyz4QmymMnfAjG52F+/XkbV3yzES6MHg==",
+  "dgSpecHash": "bPw3CbNEd1plJ5t8cw/4f6swxHMbGqPU1lhD/GeAiW/5jOQFNJFBmuK6LgzpmsIHQoHDow+lJwOS8a02fSJt+w==",
   "success": true,
-  "projectFilePath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
+  "projectFilePath": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.core\\1.22.0\\azure.core.1.22.0.nupkg.sha512",
-    "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.storage.blobs\\12.11.0\\azure.storage.blobs.12.11.0.nupkg.sha512",
-    "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.storage.common\\12.10.0\\azure.storage.common.12.10.0.nupkg.sha512",
+    "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
+    "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.storage.blobs\\12.13.0\\azure.storage.blobs.12.13.0.nupkg.sha512",
+    "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.storage.common\\12.12.0\\azure.storage.common.12.12.0.nupkg.sha512",
     "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\bootstrap\\4.5.2\\bootstrap.4.5.2.nupkg.sha512",
     "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
     "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.23\\microsoft.aspnetcore.cryptography.internal.3.1.23.nupkg.sha512",

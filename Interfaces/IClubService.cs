@@ -24,5 +24,9 @@ namespace FootballStarz.Interfaces
         ClubViewModel ClubDeletionConfirmation(int id);
 
         Stadium GetStadiumByStadiumId(int stadiumId);
+
+        // Code oor Conversie functies
+
+        int SearchLigaId(string Competition);
     }
 }
