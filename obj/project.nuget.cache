@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wb5W5Wv1zr9ankofCGVD47PzZFtAcNHNfDrwOI9JsVwglo8OWrfhQOMyz4QmymMnfAjG52F+/XkbV3yzES6MHg==",
+  "dgSpecHash": "22KdZuEd+1CevK20DsbEN9gOVNfW29Bpmei6sXm3AEL2tAS7Lw9Uri0AorJxN3yIoxpWjRNTNEI6FoEUOYho+g==",
   "success": true,
-  "projectFilePath": "X:\\Fileserver\\Projects (FS)\\ASP.NET_CORE\\Projects\\FootballStarz\\I007\\FootballStarz.csproj",
+  "projectFilePath": "Z:\\Projects (Local)\\ASP.NET_CORE_MVC\\FootballStarz\\I007\\FootballStarz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.core\\1.22.0\\azure.core.1.22.0.nupkg.sha512",
     "C:\\Users\\ericvanberkel.com\\.nuget\\packages\\azure.storage.blobs\\12.11.0\\azure.storage.blobs.12.11.0.nupkg.sha512",

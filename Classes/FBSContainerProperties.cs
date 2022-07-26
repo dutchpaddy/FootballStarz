@@ -10,9 +10,9 @@ namespace FootballStarz.Classes
 {
     public class FBSContainerProperties
     {
-        public StorageSharedKeyCredential AccountCredentials { get; set; }
-        public BlobServiceClient ServiceClient { get; set; }
-        public AccountInfo Info { get; set; }
+        public StorageSharedKeyCredential? AccountCredentials { get; set; }
+        public BlobServiceClient? ServiceClient { get; set; }
+        public AccountInfo? Info { get; set; }
 
     }
 }

@@ -10,7 +10,7 @@ namespace FootballStarz.Services
 {
     public class PlayerService : IPlayerService
     {
-        private AppDbContext _context;
+        private readonly AppDbContext _context;
         private readonly ILogger _logger;
 
         public PlayerService(ILogger<PlayerService> logger, AppDbContext context)

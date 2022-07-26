@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FootballStarz.Classes;
 using FootballStarz.Data;
 using FootballStarz.Interfaces;
 using FootballStarz.Models;
@@ -9,15 +10,15 @@ namespace FootballStarz.ViewModelServices
 {
     public class ClubViewModelService : IClubViewModelService
     {
-        private readonly AppDbContext _dbcontext;
         private readonly IClubService _clubservice;
+        private readonly ILigaService _ligaService;
 
         public ClubViewModelService(
-            AppDbContext dbcontext,
-            IClubService clubService)
+            IClubService clubService,
+            ILigaService ligaService)
         {
-            _dbcontext = dbcontext;
             _clubservice = clubService;
+            _ligaService = ligaService;
         }
 
         public List<ClubViewModel> GetClubs()
@@ -26,7 +27,7 @@ namespace FootballStarz.ViewModelServices
 
             var Clubs = _clubservice.GetAllClubs();
 
-            foreach( Club club in Clubs)
+            foreach ( Club club in Clubs)
             {
                 cvm.Add
                     (new ClubViewModel
@@ -50,7 +51,8 @@ namespace FootballStarz.ViewModelServices
 //            _logger.LogInformation($"ClubDetails- id: {id}");
 
             Club club = _clubservice.GetSingleClubById(clubId);
-            Stadium stadium = _clubservice.GetStadiumByStadiumId(club.StadiumId);
+            Liga liga = _ligaService.GetSingleLigaById(club.Liga);
+            Stadium? stadium = _clubservice.GetStadiumByStadiumId(club.StadiumId);
             List<Player> players = _clubservice.GetPlayersByClubId(club.ClubId);
 
             ClubViewModel clubVM = new ClubViewModel()
@@ -59,8 +61,12 @@ namespace FootballStarz.ViewModelServices
                 ClubName = club.ClubName,
                 Founded = club.Founded,
                 ClubLogo = club.ClubLogo,
+                LastUpdated = club.TouchStamp,
                 Stadium = stadium,
-                Players = players
+                Players = players,
+                LigaName = liga.Name,
+                Season = liga.Season,
+                Country = liga.IsoCountryCode  // for the time being
             };
 
             return clubVM;

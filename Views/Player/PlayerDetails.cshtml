@@ -24,7 +24,7 @@
     </tr>
     <tr>
         <td><b>Contract with club</b></td>
-        <td>@Model.Club.ClubName</td>
+        <td>@Html.ActionLink(@Model.Club.ClubName, "ClubDetails", "Club", new { @id = @Model.Club.ClubId })</td>
     </tr>
     </thead>
 </table>

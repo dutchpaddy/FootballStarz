@@ -10,17 +10,22 @@ namespace FootballStarz.ViewModels
     {
         public int ClubId { get; set; }
 
-        public string ClubName { get; set; }
+        public string? ClubName { get; set; }
 
         public DateTime Founded { get; set; }
 
-        public string ClubLogo { get; set; }
+        public string? ClubLogo { get; set; }
 
-        public Stadium Stadium { get; set; }
+        public int? StadiumId { get; set; }
+        public Stadium? Stadium { get; set; }
 
-        public int StadiumId { get; set; }
+        public int Version { get; set; }
+        public DateTime? LastUpdated { get; set; }
         
-        public List<Player> Players { get; set; }
+        public string? LigaName { get; set; }
+        public string? Season { get; set; }
+        public string? Country { get; set; }
+        public List<Player>? Players { get; set; }
     
     }
 }

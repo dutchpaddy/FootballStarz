@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using FootballStarz.Data;
 using FootballStarz.Models;
 using FootballStarz.ViewModels;
@@ -12,7 +11,7 @@ namespace FootballStarz.Services
 {
     public class ClubService : IClubService
     {
-        private AppDbContext _context;
+        private readonly AppDbContext _context;
         private readonly ILogger _logger; 
 
         public ClubService(ILogger<ClubService> logger, AppDbContext context)
@@ -40,8 +39,7 @@ namespace FootballStarz.Services
 
         public List<String> GetAllClubLogos()
         {
-             List<String> Logos = (from c in _context.Clubs
-                                  select c.ClubLogo).ToList<String>();
+             List<String> Logos = (from c in _context.Clubs orderby c.ClubLogo select c.ClubLogo).ToList<String>();
 
             return Logos;
         }
@@ -67,6 +65,9 @@ namespace FootballStarz.Services
             oldClub.Founded = newClub.Founded;
             oldClub.ClubLogo = newClub.ClubLogo;		// Read image from storage; see WorldJourney example
             oldClub.StadiumId = newClub.StadiumId;
+            oldClub.Liga = newClub.Liga;
+            oldClub.Version = newClub.Version;
+            oldClub.TouchStamp = DateTime.Now;
 
             _context.SaveChanges();
         }
@@ -93,6 +94,7 @@ namespace FootballStarz.Services
             Stadium Stadium = GetStadiumByStadiumId(Club.StadiumId);
             List<Player> Players = GetPlayersByClubId(Club.ClubId);
 
+
             ClubViewModel ClubVM = new ClubViewModel()
             {
                 ClubId = Club.ClubId,
@@ -100,33 +102,14 @@ namespace FootballStarz.Services
                 Founded = Club.Founded,
                 ClubLogo = Club.ClubLogo,
                 Stadium = Stadium,
-                Players = Players
+                Players = Players,
+                Version = Club.Version
+
             };
 
             return ClubVM;
 
         }
 
-        //public ClubViewModel ClubDetails(int id)
-        //{
-        //    _logger.LogInformation($"ClubDetails- id: {id}");
-
-        //    Club club = GetSingleClubById(id);
-        //    Stadium stadium = GetStadiumByStadiumId(club.StadiumId);
-        //    List<Player> players = GetPlayersByClubId(club.ClubId);
-
-        //    ClubViewModel clubVM = new ClubViewModel()
-        //    {
-        //        ClubId = club.ClubId,
-        //        ClubName = club.ClubName,
-        //        Founded = club.Founded,
-        //        ClubLogo = club.ClubLogo,
-        //        Stadium = stadium,
-        //        Players = players
-        //    };
-
-        //    return clubVM;
-
-        //}
     }
 }

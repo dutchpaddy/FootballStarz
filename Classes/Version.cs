@@ -3,7 +3,7 @@ namespace FootballStarz.Classes
 {
     public class Version
     {
-        public static readonly string CurrentVersion = "1.4";
+        public static readonly string CurrentVersion = "1.5";
 
         public Version()
         {

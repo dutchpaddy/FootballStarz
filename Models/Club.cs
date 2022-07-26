@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using FootballStarz.Validator;
 
 namespace FootballStarz.Models
 {
@@ -15,7 +11,7 @@ namespace FootballStarz.Models
         [Required(ErrorMessage = "Club name required.")]
         [Display(Name = "Club name")]
         [DataType(DataType.Text)]
-        public string ClubName { get; set; }
+        public string? ClubName { get; set; }
 
         [Required(ErrorMessage = "Founded required.")]
         [Display(Name = "Founded")]
@@ -26,11 +22,19 @@ namespace FootballStarz.Models
         [Display(Name = "Club Logo")]
         [DataType(DataType.Text)]
         //[ClubLogoValidation]
-        public string ClubLogo { get; set; }
+        public string? ClubLogo { get; set; }
 
         //[Required(ErrorMessage = "Stadium name required.")]
         [Display(Name = "Stadium Name")]
         public int StadiumId { get; set; }
+
+        public int Liga { get; set; }
+
+        [Display(Name = "Version")]
+        public int Version { get; set; }
+
+        [Display(Name = "Last updated")]
+        public DateTime? TouchStamp { get; set; }
 
     }
 }

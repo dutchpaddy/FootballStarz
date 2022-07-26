@@ -20,8 +20,22 @@
     </tr>
     <tr>
         <td><b>Home Stadium</b></td>
-        <td>@Model.Stadium.StadiumName</td>
+        <td>@Html.ActionLink(@Model.Stadium?.StadiumName, "StadiumDetails", "Stadium", new { @id = @Model.Stadium?.StadiumId})</td>
     </tr>
+        <tr>
+        <td><b>Database Version</b></td>
+        <td>@Model.Version.ToString()</td>
+        &nbsp;
+        <td><b>Last updated</b></td>
+        <td>@Model.LastUpdated?.ToString("dd-MM-yyyy")</td>
+    </tr>
+    <tr>
+        <td><b>Liga</b></td>
+        <td>@Model.LigaName</td>
+        <td><b>Season</b></td>
+        <td>@Model.Season</td>
+    </tr>
+
     </thead>
 </table>
 
@@ -71,7 +85,7 @@ else
     @foreach (Player dfk in Model.Players)
     {
     <tr>
-        <td>@dfk.PlayerName</td>
+        <td>@Html.ActionLink(@dfk.PlayerName, "PlayerDetails", "Player", new { @id = @dfk.PlayerId })</td>
         <td>@dfk.BirthDate.ToString("dd-MM-yyyy")</td>
         <td>@dfk.Nationality</td>
     </tr>}

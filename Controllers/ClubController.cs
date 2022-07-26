@@ -15,7 +15,7 @@ namespace FootballStarz.Controllers
     public class ClubController : Controller
     {
 
-        private readonly IHostingEnvironment _HostingEnv;
+        private readonly IWebHostEnvironment _HostingEnv;
         private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
@@ -25,7 +25,7 @@ namespace FootballStarz.Controllers
         private readonly IStadiumService _StadiumService;
 
         public ClubController(IConfiguration configuration,
-                                IHostingEnvironment HostingEnvironment,
+                                IWebHostEnvironment HostingEnvironment,
                                 ILogger<ClubController> logger,
                                 IClubViewModelService clubViewModelService,
                                 IClubService ClubService,
@@ -42,12 +42,12 @@ namespace FootballStarz.Controllers
             _StadiumService = StadiumService;
         }
 
- //       public IActionResult AllClubs(LoginViewModel LoginVM)
         public IActionResult AllClubs()
         {
             ViewData["ClubMessage"] = "All Clubs are shown here:";
 
             return View(_clubViewModelService.GetClubs());
+
         }
 
         public IActionResult CreateClub()

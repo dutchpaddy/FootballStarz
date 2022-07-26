@@ -3,17 +3,16 @@ using FootballStarz.ViewModels;
 using FootballStarz.Data;
 using System.Collections.Generic;
 using FootballStarz.Models;
+using FootballStarz.Classes;
 
 namespace FootballStarz.ViewModelServices
 {
     public class PlayerViewModelService : IPlayerViewModelService
     {
-        private readonly AppDbContext _dbcontext;
         private readonly IPlayerService _playerService;
 
-        public PlayerViewModelService(AppDbContext context, IPlayerService playerService)
+        public PlayerViewModelService(IPlayerService playerService)
         {
-            _dbcontext = context;
             _playerService = playerService;
         }
 
@@ -42,6 +41,7 @@ namespace FootballStarz.ViewModelServices
 
             var players = _playerService.GetAllPlayers();
 
+  
             foreach(Player player in players)
             {
                 pvm.Add(

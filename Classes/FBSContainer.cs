@@ -18,7 +18,7 @@ namespace FootballStarz.Classes
         public String StorageAccountName { get; set; }
         public String AccountKind { get; set;  }
         public String SkuName { get; set; }
-        public String ContainerName { get; set; } = null;
+        public String ContainerName { get; set; }
         public String Uri { get; set; }
         public List<FBSBlob> Blobs { get; set;  }
     }
